@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clause Wheel · Pon Power General Conditions</title>
+<meta name="description" content="Interactive clause wheel: 24 articles, 54 typed links and 14 outside documents in a set of general conditions of sale, each link backed by verbatim quotes. Independent tech demo.">
+<meta property="og:title" content="Clause Wheel: a contract as a map of its own cross-references">
+<meta property="og:description" content="24 articles, 54 typed links, 14 outside documents. Every link backed by a verbatim quote from both ends. Independent tech demo.">
+<meta property="og:type" content="website">
+<style>
+:root{
+  --bg:#f1f0eb; --surface:#ffffff; --ink:#111111; --muted:#5b5a54; --line:#d9d6cc; --ring:#ffffff; --ring-dim:#ecebe5;
+  --brand:#ffcd11; --brand-ink:#111111; --bar:#111111; --bar-ink:#ffffff; --quote:#f6f5f0;
+  --t-cond:#1f6fd6; --t-def:#0b8a8a; --t-cancel:#d4551a; --t-prec:#2f8a3f; --t-carve:#b8337a; --t-time:#7a4fd1; --t-par:#3f4650; --t-xref:#9a9890;
+  --c-form:#6f7783; --c-comm:#2f7dd1; --c-perf:#d9822b; --c-title:#2e9e73; --c-liab:#c4485a; --c-comp:#8a5cd1; --c-disp:#1aa2b0;
+  --display:"Arial Narrow","Roboto Condensed","Helvetica Neue",Arial,sans-serif; --body:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; --serif:Georgia,"Times New Roman",serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0d0d0d; --surface:#171717; --ink:#f3f1e9; --muted:#a5a298; --line:#2d2c29; --ring:#1e1e1d; --ring-dim:#151515;
+  --bar:#000000; --quote:#1f1f1e;
+  --t-cond:#6aa5f5; --t-def:#3fc7c7; --t-cancel:#f58a4b; --t-prec:#5cbf6b; --t-carve:#e46aac; --t-time:#a98df0; --t-par:#c3c8cf; --t-xref:#77756e;
+  --c-form:#8a929e; --c-comm:#5d98ee; --c-perf:#e8a655; --c-title:#62bf92; --c-liab:#e06676; --c-comp:#a882ee; --c-disp:#45bfcc;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0d0d0d; --surface:#171717; --ink:#f3f1e9; --muted:#a5a298; --line:#2d2c29; --ring:#1e1e1d; --ring-dim:#151515;
+  --bar:#000000; --quote:#1f1f1e;
+  --t-cond:#6aa5f5; --t-def:#3fc7c7; --t-cancel:#f58a4b; --t-prec:#5cbf6b; --t-carve:#e46aac; --t-time:#a98df0; --t-par:#c3c8cf; --t-xref:#77756e;
+  --c-form:#8a929e; --c-comm:#5d98ee; --c-perf:#e8a655; --c-title:#62bf92; --c-liab:#e06676; --c-comp:#a882ee; --c-disp:#45bfcc;
+  color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink)}
+body{font-family:var(--body);font-size:14px;line-height:1.5}
+button{font:inherit;color:inherit}
+a{color:inherit}
+.bar{background:var(--bar);color:var(--bar-ink);border-bottom:6px solid var(--brand)}
+.bar-in{max-width:1400px;margin:0 auto;padding:14px 16px;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(20px,2.6vw,30px);letter-spacing:.02em;text-transform:uppercase;margin:0;line-height:1.1}
+h1 span{color:var(--brand)}
+.sub{margin:3px 0 0;font-size:12.5px;color:#c9c6bb}
+.tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.search{position:relative;flex:1 1 240px;min-width:0;max-width:340px}
+.search input{width:100%;font:inherit;font-size:13.5px;padding:7px 12px;border-radius:6px;border:1px solid #444;background:#1c1c1c;color:#fff}
+.search input::placeholder{color:#9a978c}
+.search input:focus{outline:2px solid var(--brand);outline-offset:1px}
+.dd{position:absolute;left:0;right:0;top:calc(100% + 4px);background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:8px;box-shadow:0 10px 30px -8px rgba(0,0,0,.45);max-height:60vh;overflow:auto;z-index:20;min-width:260px}
+.dd h5{margin:0;padding:7px 12px 3px;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.dd button{display:block;width:100%;text-align:left;border:0;background:none;padding:6px 12px;cursor:pointer;font-size:13px}
+.dd button small{display:block;color:var(--muted);font-size:11.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dd button.act,.dd button:hover{background:var(--brand);color:var(--brand-ink)}
+.dd button.act small,.dd button:hover small{color:#3a3a36}
+.dd .none{padding:10px 12px;color:var(--muted)}
+.seg{display:inline-flex;border:1px solid #444;border-radius:6px;overflow:hidden}
+.seg button{border:0;background:transparent;color:#c9c6bb;font-size:12px;padding:6px 10px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--brand);color:var(--brand-ink);font-weight:700}
+.wrap{max-width:1400px;margin:0 auto;padding:16px 16px 32px;display:flex;flex-direction:column;gap:16px}
+.main{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:920px){.main{grid-template-columns:1fr}}
+.card-box{background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.wheel{padding:8px;position:relative}
+.wheel svg{display:block;width:100%;height:auto;touch-action:manipulation}
+.legend{display:flex;flex-wrap:wrap;gap:6px;padding:8px 8px 2px;align-items:center}
+.legend .lt{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:2px;flex:0 0 100%}
+.lg{font-size:12px;display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:3px 10px 3px 8px;cursor:pointer}
+.lg i{flex:none;background:var(--c)}
+.lg i.ln{width:16px;height:3px;border-radius:2px}
+.lg i.sq{width:10px;height:10px;border-radius:2px}
+.lg b{font-weight:500;color:var(--muted);font-variant-numeric:tabular-nums}
+.lg[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.lg[aria-pressed="true"] b{color:inherit;opacity:.7}
+.clear{font-size:12px;border:0;background:none;color:var(--muted);text-decoration:underline;cursor:pointer;padding:3px 6px}
+.clear[hidden]{display:none}
+/* svg */
+.wedge{cursor:pointer;outline:none}
+.wedge path.band{fill:color-mix(in srgb,var(--c) 22%,var(--ring));stroke:var(--surface);stroke-width:2;transition:fill .15s}
+.wedge path.cat{fill:var(--c)}
+.wedge .num{font-family:var(--display);font-weight:800;font-size:19px;fill:var(--ink);text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.wedge .ttl{font-family:var(--body);font-size:11.5px;fill:var(--ink);opacity:.85;pointer-events:none}
+.wedge .cnt{font-size:9.5px;fill:var(--muted);text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.wedge:hover path.band{fill:color-mix(in srgb,var(--c) 42%,var(--ring))}
+.wedge:focus-visible path.band{stroke:var(--ink);stroke-width:3}
+.wedge.nb path.band{fill:color-mix(in srgb,var(--c) 50%,var(--ring))}
+.wedge.hl path.band{fill:color-mix(in srgb,var(--c) 60%,var(--ring))}
+.wedge.sel path.band{fill:var(--brand)}
+.wedge.sel .num,.wedge.sel .ttl,.wedge.sel .cnt{fill:var(--brand-ink);opacity:1}
+.wedge.sel .ttl{font-weight:700}
+.wedge.dim path.band{fill:color-mix(in srgb,var(--c) 7%,var(--ring-dim))}
+.wedge.dim .num,.wedge.dim .ttl,.wedge.dim .cnt{opacity:.28}
+.wedge.dim path.cat{opacity:.3}
+.badge{pointer-events:none}
+.badge circle{fill:var(--ink)}
+.badge text{fill:var(--surface);font-size:11px;font-weight:700;text-anchor:middle;dominant-baseline:central}
+.partarc{fill:none;stroke:var(--ink);stroke-width:3}
+.partlab{font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.12em;fill:var(--ink);text-transform:uppercase}
+.chord{fill:none;stroke-linecap:round;opacity:.5;cursor:pointer;transition:opacity .15s}
+.chord.x{opacity:.22}
+.chord.off{opacity:.05}
+.chord.on{opacity:1}
+.chord.dash{stroke-dasharray:6 4}
+.hot{fill:none;stroke-linecap:round;pointer-events:none}
+.hub text{text-anchor:middle;fill:var(--muted);font-size:13px;pointer-events:none;paint-order:stroke;stroke:var(--surface);stroke-width:6px;stroke-linejoin:round}
+.hub .big{font-family:var(--display);font-weight:800;font-size:46px;fill:var(--ink)}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--surface);font-size:12px;padding:6px 9px;border-radius:6px;max-width:270px;line-height:1.35;z-index:5}
+.tip small{display:block;opacity:.75;font-size:11px}
+/* panel */
+.panel{padding:18px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.eyebrow{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.eyebrow i{width:10px;height:10px;border-radius:2px;background:var(--c)}
+.unpin{margin-left:auto;font-size:12px;border:1px solid var(--line);background:none;border-radius:999px;padding:2px 10px;cursor:pointer;color:var(--muted);text-transform:none;letter-spacing:0}
+.ph{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.ph .n{font-family:var(--display);font-weight:800;font-size:34px;line-height:1;background:var(--brand);color:var(--brand-ink);padding:2px 8px;border-radius:4px}
+.ph h2{margin:0;font-family:var(--display);font-weight:800;font-size:22px;text-transform:uppercase;letter-spacing:.01em;line-height:1.15}
+p{margin:0}
+.summary,.sig,.intro p{max-width:68ch}
+h3{margin:0 0 4px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.sigbox{border-left:4px solid var(--brand);padding:2px 0 2px 12px}
+.ref{border:0;background:color-mix(in srgb,var(--brand) 45%,transparent);border-radius:3px;padding:0 4px;cursor:pointer;font-weight:600}
+.meta{font-size:12.5px;color:var(--muted)}
+.meta b{color:var(--ink);font-weight:600}
+details{border:1px solid var(--line);border-radius:8px}
+details>summary{cursor:pointer;padding:8px 12px;font-weight:600;list-style-position:inside}
+details>.in{padding:2px 12px 12px}
+.subs{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px}
+.subs li{display:grid;grid-template-columns:3.2em 1fr;gap:8px}
+.subs .l{font-family:var(--display);font-weight:800;color:var(--muted)}
+.note{font-size:12px;color:var(--muted)}
+.group{display:flex;flex-direction:column;gap:6px}
+.gh{display:flex;align-items:center;gap:8px;border:0;background:none;padding:0;cursor:pointer;text-align:left;font-weight:700;font-size:13.5px}
+.gh .pn{font-family:var(--display);font-weight:800;font-size:15px;min-width:3.4em}
+.gh .cnt{font-weight:500;color:var(--muted);font-size:12px}
+.gh:hover .pt{text-decoration:underline}
+.lk{border:1px solid var(--line);border-left:4px solid var(--c);border-radius:8px}
+.lk>button{all:unset;box-sizing:border-box;display:grid;grid-template-columns:auto 1fr auto;gap:4px 10px;align-items:center;width:100%;padding:8px 11px;cursor:pointer}
+.lk>button:focus-visible{outline:2px solid var(--ink);outline-offset:1px;border-radius:6px}
+.chip{font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;font-weight:700;color:var(--c);white-space:nowrap}
+.lk .lab{font-weight:600;min-width:0}
+.lk .anc{font-size:11.5px;color:var(--muted);white-space:nowrap}
+.lk .body{padding:0 12px 12px;display:flex;flex-direction:column;gap:10px}
+.lk .dir{font-size:12px;color:var(--muted)}
+.quotes{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media (max-width:540px){.quotes{grid-template-columns:1fr}.lk>button{grid-template-columns:1fr}}
+.q{background:var(--quote);border-radius:6px;padding:8px 10px;min-width:0}
+.q h4{margin:0 0 3px;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.q p{font-family:var(--serif);font-size:13.5px;line-height:1.45;overflow-wrap:anywhere}
+.all{align-self:flex-start;font-size:12.5px;border:1px solid var(--ink);background:var(--brand);color:var(--brand-ink);border-radius:999px;padding:4px 12px;cursor:pointer;font-weight:600}
+.stats{display:flex;gap:22px;flex-wrap:wrap}
+.stat .v{font-family:var(--display);font-weight:800;font-size:30px;line-height:1.05}
+.stat .k{font-size:11.5px;color:var(--muted)}
+.top{display:flex;flex-wrap:wrap;gap:6px}
+.pill{border:1px solid var(--line);background:none;border-radius:999px;padding:3px 10px;cursor:pointer;font-size:12.5px}
+.pill b{font-family:var(--display);font-weight:800}
+.pill:hover{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+/* lower sections */
+.sec>summary{font-family:var(--display);font-weight:800;font-size:18px;text-transform:uppercase;letter-spacing:.02em;padding:12px 16px}
+.sec>.in{padding:4px 16px 16px}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 28px}
+@media (max-width:760px){.cols{grid-template-columns:1fr}}
+dl{margin:0;display:flex;flex-direction:column;gap:10px}
+dt{font-weight:700;display:flex;align-items:center;gap:8px}
+dt i{flex:none;background:var(--c)}
+dt i.ln{width:16px;height:3px;border-radius:2px}
+dt i.sq{width:11px;height:11px;border-radius:2px}
+dd{margin:2px 0 0 24px;max-width:66ch}
+dd .eg{display:block;color:var(--muted);font-size:12.5px;margin-top:2px}
+.tbl{width:100%;border-collapse:collapse;font-size:13px}
+.tbl th{text-align:left;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:6px 8px;border-bottom:2px solid var(--ink)}
+.tbl td{padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+.tblw{overflow-x:auto}
+.cm{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:760px){.cm{grid-template-columns:1fr}}
+.cm h4{margin:0 0 6px;font-size:14px}
+.cm h4 button{border:0;background:none;padding:0;cursor:pointer;font-weight:700;text-align:left}
+.cm h4 button:hover{text-decoration:underline}
+.cm .b{border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+mark{background:var(--brand);color:var(--brand-ink);border-radius:2px;padding:0 1px}
+footer{font-size:12px;color:var(--muted);max-width:90ch}
+.fun{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.fb{border:1px solid #444;background:transparent;color:#e8e5da;font-size:12px;padding:6px 11px;border-radius:6px;cursor:pointer;white-space:nowrap}
+.fb:hover{border-color:var(--brand)}
+.fb[aria-pressed="true"]{background:var(--brand);color:var(--brand-ink);border-color:var(--brand);font-weight:700}
+.fb:focus-visible,.seg button:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+#rot{transform-origin:500px 500px}
+#rot.idle{animation:idle 260s linear infinite}
+@keyframes idle{to{transform:rotate(360deg)}}
+.wheel svg.shake{animation:shake .7s linear}
+@keyframes shake{10%,50%,90%{transform:translate(-5px,2px) rotate(-.6deg)}30%,70%{transform:translate(5px,-2px) rotate(.6deg)}}
+.wedge .glow{fill:var(--ping,var(--brand));opacity:0;pointer-events:none}
+.wedge.ping .glow{animation:glow .7s ease-out}
+@keyframes glow{0%{opacity:.95}100%{opacity:0}}
+svg.touring .chord{opacity:.06}
+svg.touring .wedge path.band{fill:color-mix(in srgb,var(--c) 14%,var(--ring))}
+svg.touring .wedge.ping .glow{animation:glow 1s ease-out}
+.trail{fill:none;stroke-linecap:round;pointer-events:none;animation:trail 1.5s ease-out forwards}
+@keyframes trail{0%{opacity:1;stroke-width:5.5}100%{opacity:0;stroke-width:1.2}}
+.doc{cursor:pointer;outline:none}
+.doc path{fill:none;stroke:var(--muted);stroke-width:1.1;stroke-dasharray:2 3;opacity:.55}
+.doc circle{fill:var(--surface);stroke:var(--ink);stroke-width:2}
+.doc text{font-size:17px;fill:var(--ink);dominant-baseline:central}
+.doc:hover circle,.doc.on circle,.doc.sel circle{fill:var(--brand)}
+.doc.on path,.doc.sel path,.doc:hover path{stroke:var(--ink);opacity:1;stroke-width:1.8;stroke-dasharray:none}
+.doc.on text,.doc.sel text{font-weight:700}
+.doc.dim{opacity:.22}
+.doc:focus-visible circle{stroke-width:4}
+.docq{display:flex;flex-direction:column;gap:6px}
+.docq .q h4 button{border:0;background:none;padding:0;cursor:pointer;font:inherit;color:inherit;text-decoration:underline;letter-spacing:inherit;text-transform:inherit}
+.basis{font-size:12px;color:var(--muted)}
+.basis b{color:var(--ink)}
+#fx{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.wheel.frozen svg{filter:grayscale(1) brightness(.92);pointer-events:none;transition:filter .4s}
+#rot{transition:opacity 1.2s}
+#rot.gone{opacity:0}
+.panel{transition:font-size .5s}
+body.tiny .panel{font-size:5px}
+body.tiny .panel *{font-size:inherit!important}
+.dozer{pointer-events:none}
+.eggs li{margin:3px 0}
+.eggs code{background:var(--quote);border-radius:4px;padding:1px 6px;font-family:inherit;font-weight:600}
+.toast ul{margin:6px 0 0;padding-left:16px}
+.toast{position:absolute;left:50%;top:14px;transform:translateX(-50%);background:var(--ink);color:var(--surface);border-left:5px solid var(--brand);padding:9px 14px;border-radius:6px;font-size:13px;max-width:min(92%,460px);z-index:6;box-shadow:0 8px 24px -8px rgba(0,0,0,.5)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="bar"><div class="bar-in">
+  <div>
+    <h1>Pon Power General Conditions <span>· Clause Wheel</span></h1>
+    <p class="sub">Version 150219 (2019, EN) · Part A: products · Part B: repairs and services · Hover a clause to light up its links, click to pin it</p>
+  </div>
+  <div class="tools">
+    <div class="fun" id="fun">
+      <button class="fb" id="tune" aria-pressed="false" title="Play an 8-second clip that walks the links. Sequence: single notes. Chord: a chord at every step">▶ Play tune</button>
+      <button class="fb" id="spin" title="Spin the wheel and land on a clause">Spin</button>
+      <div class="seg" role="group" aria-label="Playback style" id="mode"><button data-m="melody" aria-pressed="true" title="One note at a time, clause by clause along the path">Sequence</button><button data-m="chord" aria-pressed="false" title="All linked clauses sound together">Chord</button></div>
+      <button class="fb" id="snd" aria-pressed="false" title="Play notes when you pin a clause or open a link">Sound off</button>
+    </div>
+    <button class="fb" id="docsbtn" aria-pressed="true" title="Show documents outside the conditions that the text relies on">Outside docs</button>
+    <div class="search"><input id="q" type="search" placeholder="Search clauses, terms, links  ( / )" autocomplete="off" aria-label="Search"><div class="dd" id="dd" hidden></div></div>
+    <div class="seg" role="group" aria-label="Theme" id="theme">
+      <button data-t="auto" aria-pressed="true">Auto</button><button data-t="light" aria-pressed="false">Light</button><button data-t="dark" aria-pressed="false">Dark</button>
+    </div>
+  </div>
+</div></div>
+<div class="wrap">
+  <div class="main">
+    <section class="wheel card-box" aria-label="Clause wheel">
+      <svg id="svg" viewBox="-40 -40 1080 1080" role="img" aria-label="Clauses arranged in a circle with connecting chords"></svg>
+      <div class="legend" id="lg-types"></div>
+      <div class="legend" id="lg-cats"></div>
+      <div class="tip" id="tip" hidden></div>
+      <canvas id="fx"></canvas>
+      <div class="toast" id="toast" hidden role="status"></div>
+    </section>
+    <aside class="panel card-box" id="panel" aria-live="polite"></aside>
+  </div>
+  <details class="sec card-box" id="glossary"><summary>Glossary</summary><div class="in">
+    <div class="cols"><dl id="gl-types"><h3>Link types</h3></dl><dl id="gl-cats"><h3>Categories</h3></dl></div>
+    <h3 style="margin-top:18px">Defined terms</h3><div class="tblw" id="gl-terms"></div>
+    <h3 style="margin-top:18px">Outside documents the text relies on</h3><div class="tblw" id="gl-docs"></div>
+  </div></details>
+  <details class="sec card-box" id="map"><summary>Clause map (paraphrase)</summary><div class="in">
+    <p class="note" style="margin-bottom:12px">Paragraph-by-paragraph paraphrase, not the source wording. Read the source PDF for the binding text. Only the quotes inside link cards are verbatim.</p>
+    <div class="cm" id="cm"></div>
+  </div></details>
+  <details class="sec card-box" id="eggs"><summary>Easter eggs</summary><div class="in">
+    <p class="note" style="margin-bottom:8px">Tech-demo extras. Sounds need Sound on. Type the word into the search box. The ones marked ⏎ take over the wheel, so they wait for Enter.</p>
+    <ul class="eggs" id="egglist"></ul>
+  </div></details>
+  <footer>
+    Source: <a href="https://www.zeppelin-cat.com/application/files/2815/5049/7804/General-conditions-Pon-Power-BV-2019-EN.pdf" target="_blank" rel="noopener">General Conditions for the Sale and Delivery of Products, Pon Power BV (150219/ca)</a>.
+    Independent tech demo of a clause-link visualiser, built on a publicly available document. Not legal advice. Not produced by, affiliated with or endorsed by Pon Power BV or Caterpillar Inc. The document governs. Link types, directions, categories and notes are analysis, not quotation.
+  </footer>
+</div>
+<script>
+const DATA = {"nodes": [{"id": "A.I", "short": "General", "title": "General", "cat": "form", "summary": "Part A applies to all offers, orders, sale contracts, service contracts and other agreements for Pon Power deliveries, unless both parties expressly agree otherwise in writing. Defines Pon Power and Principal.", "sig": "Entry point for Part A. Its written-deviation rule sits beside the governing-law clause, which also requires a writing signed by both parties to depart from Dutch law [A.XIV]. Part B opens with the same scope wording for repairs and services [B.I].", "subs": [{"lab": "1", "t": "Scope of Part A. All provisions apply unless both parties expressly provide otherwise in writing."}, {"lab": "2", "t": "Definitions. Pon Power is the party referring to the conditions in its quote. Principal is any party to whom the quote is directed."}]}, {"id": "A.II", "short": "Quote", "title": "Quote", "cat": "form", "summary": "A quote from Pon Power involves no commitment.", "sig": "Short, but it frames formation: a quote is not a commitment, and the agreement only completes under [A.III]. The assumptions behind each quote (normal circumstances, normal working hours) are in [A.IV].", "subs": [{"lab": "1", "t": "Each quote involves no commitment."}]}, {"id": "A.III", "short": "Agreement", "title": "Agreement", "cat": "form", "summary": "A written agreement completes when the Principal signs the contract or when Pon Power dispatches its written order confirmation. Verbal promises bind Pon Power only if made by someone holding a specific proxy or other power of representation.", "sig": "Fixes the completion date, which other clauses count from: delivery time starts no earlier than completion [A.VI], and cost rises after completion can be passed on [A.IV]. Read with [A.II] (quotes do not bind) and [A.V] (catalogue data binds only if written into the signed contract or confirmation). Part B has its own formation rule based on written confirmation [B.II].", "subs": [{"lab": "1", "t": "A written agreement is completed on the day the Principal signs, or on the day Pon Power dispatches its written order confirmation."}, {"lab": "2", "t": "Verbal promises, arrangements and other juristic acts bind Pon Power only if made by persons with a specific proxy or other power of representation."}]}, {"id": "A.IV", "short": "Price", "title": "Price", "cat": "comm", "summary": "Prices are EXW or DDP under the most recent INCOTERMS and exclude packaging, VAT and other government charges. Pon Power may raise the price if cost factors rise after completion, even foreseeably. Quotes assume normal circumstances and normal working hours.", "sig": "Does more than set the price. The Incoterm chosen here decides when risk passes [A.VIII]. The price-rise right runs from the completion date in [A.III]. The quote assumptions link back to [A.II] and forward to the Principal's site duties, where work outside normal hours can be required [A.VII]. Part B prices repairs on a different basis [B.III].", "subs": [{"lab": "1", "t": "Unless stated otherwise, prices are based on delivery EXW or DDP under the most recent INCOTERMS, excluding packaging, VAT and other government charges on sales and deliveries."}, {"lab": "2", "t": "Where assembly or putting into operation is agreed, the price includes agreed assembly and delivery in operating order at the quoted location, all costs included, VAT excluded."}, {"lab": "3", "t": "If cost price factors rise after completion of the agreement, even through foreseeable circumstances, Pon Power may raise the agreed price accordingly."}, {"lab": "4", "t": "Each quote assumes implementation under normal circumstances and during normal working hours."}]}, {"id": "A.V", "short": "Drawings & IP", "title": "Drawings, calculations, descriptions, models, tools etc.", "cat": "title", "summary": "Catalogue data, drawings, dimensions and weights bind only if written into the signed contract or order confirmation. Quotes, drawings, software, models, tools and underlying know-how stay Pon Power's property. The Principal may use them only for the agreement and indemnifies Pon Power against third-party claims.", "sig": "Two functions. It limits what counts as a binding specification, read with [A.III], and it protects Pon Power's information. The Principal's indemnity here pairs with the liability clause, where Pon Power excludes liability for third-party rights infringed through data the Principal supplied [A.XI].", "subs": [{"lab": "1", "t": "Data in catalogues, illustrations, drawings, dimensions and weights bind only if explicitly included in a contract signed by both parties or in an order confirmation signed by Pon Power."}, {"lab": "2", "t": "Quotes, drawings, calculations, software, descriptions, models and tools remain Pon Power's property, as does the information underlying manufacturing and construction methods, even if charged for. The Principal vouches that information is used solely for the agreement and not in breach of third-party intellectual rights."}, {"lab": "3", "t": "The Principal indemnifies Pon Power for direct and indirect consequences of third-party claims arising from violation of the rights in paragraph 2."}]}, {"id": "A.VI", "short": "Delivery", "title": "Delivery and delivery time", "cat": "perf", "summary": "Delivery time starts at the latest of: completion of the agreement, receipt of documents and permits, completion of formalities, and receipt of any advance payment. The product is deemed delivered when it is available for transfer and the Principal has been told. Late delivery gives the Principal no right to dissolve without judicial authorisation. Refusal or cancellation costs the Principal 10% of the price plus damages.", "sig": "The most connected clause in the document. Its deemed-delivery point (VI.3) is the reference date for the 70% invoice [A.IX] and the guarantee periods [A.X], and it sits alongside retention of title [A.VIII]. Its clock starts from completion under [A.III] and from advance payment under [A.IX], and its timing rules apply equally to assembly time [A.VII]. On delay, the Principal's exits are restricted here while Pon Power's are set out in [A.XIII]. Force majeure, defined in [A.XII], removes any agreed fine, and that fine stands in place of compensation, consistent with [A.XI].", "subs": [{"lab": "1", "t": "Delivery time starts on the latest of: (a) completion of the agreement; (b) receipt of the documents, data and permits needed; (c) fulfilment of the formalities for starting work; (d) receipt of any agreed advance payment. If a delivery date or week is agreed, delivery time is the period from completion to that date or week."}, {"lab": "2", "t": "Delivery time assumes the working conditions at completion and timely delivery of materials ordered by Pon Power. If either changes without Pon Power's fault, delivery time is extended as necessary."}, {"lab": "3", "t": "The product is deemed delivered when it is available for transfer of ownership to the Principal, or can be placed in its power, and the Principal has been informed. Assembly and installation commitments are unaffected."}, {"lab": "4", "t": "Delivery time is also extended by any delay on Pon Power's side caused by the Principal's failure to meet its obligations or to cooperate."}, {"lab": "5", "t": "Exceeding the delivery period, for whatever reason, does not entitle the Principal to dissolve the agreement in whole or in part, or to have the work done itself or by others, without judicial authorisation."}, {"lab": "6", "t": "Any contractual fine for late delivery replaces any entitlement of the Principal to compensation. No fine is owed if the delay results from force majeure."}, {"lab": "7", "t": "If the Principal refuses to take receipt, all resulting costs (freight, handling, storage) are the Principal's."}, {"lab": "8", "t": "On cancellation or failure to take possession, the Principal immediately owes 10% of the agreed price, and Pon Power may also claim full compensation for damages."}]}, {"id": "A.VII", "short": "Assembly", "title": "Assembly and installation", "cat": "perf", "summary": "The Principal must provide, at its own expense and risk, everything needed for assembly: site access, accommodation, storage, helpers, utilities, safety measures to VCA guidelines, and materials in place. Damage and costs from non-compliance are the Principal's. Article VI applies to assembly time.", "sig": "Sets the Principal's site duties. Article VI's timing rules apply to assembly time, and a failure here extends delivery time under VI.4 [A.VI]. Where Pon Power assembles, the guarantee period runs from completion of assembly [A.X]. Where Pon Power only lends a hand without being engaged to assemble, that help is at the Principal's risk [A.XI]. The price may include assembly, and work outside normal hours departs from the quote assumptions [A.IV]. Part B imposes similar site duties for on-location repairs [B.IV].", "subs": [{"lab": "1", "t": "The Principal is responsible for correctly and timely implementing all arrangements, facilities and conditions needed for setting up and operating the product, except where that work is carried out by or on behalf of Pon Power to its own data or drawings."}, {"lab": "2", "t": "In any event the Principal arranges at its own expense and risk: (a) that Pon Power's and subcontractors' staff can start and continue work in normal hours, and outside them if Pon Power deems it necessary and gives timely notice; (b) suitable accommodation; (c) suitable access roads; (d) a site suitable for storage and assembly; (e) lockable storage; (f) auxiliary workers, equipment, utilities and normal measuring and testing equipment, free of charge; (g) safety and precautionary measures in line with VCA guidelines and government regulations; (h) all required products and materials in the correct place."}, {"lab": "3", "t": "Damage and costs from non-compliance or late compliance with this article are paid by the Principal."}, {"lab": "4", "t": "Article VI applies likewise to assembly and installation time."}]}, {"id": "A.VIII", "short": "Risk & title", "title": "Transfer of risk and ownership", "cat": "title", "summary": "Risk passes under the Incoterm used in Article IV. Title passes only when all amounts due for the delivery and related work are settled in full, including interest and costs. Pon Power is entitled to unimpeded access to take back the products.", "sig": "Splits risk from title. Risk follows the Incoterm in [A.IV]. Title waits for full payment under [A.IX], even though the product may already be deemed delivered under [A.VI]. The take-back right is the practical tool when Pon Power suspends or dissolves under [A.XIII]. Transport damage is outside the guarantee [A.X].", "subs": [{"lab": "1", "t": "Passing of risk for all direct and consequential damages is in principle determined by the Incoterm used in clause IV. If the Principal still fails to accept the product after notice of default, Pon Power may charge storage costs."}, {"lab": "2", "t": "Without prejudice to paragraph 1 and clause VI paragraph 3, title passes to the Principal only once all amounts due in connection with the delivery or related work are settled in full, including interest and costs."}, {"lab": "3", "t": "Pon Power is entitled to unimpeded access to the delivered products. The Principal cooperates so that Pon Power can exercise its ownership condition by taking the products back, including any disassembly."}]}, {"id": "A.IX", "short": "Payment", "title": "Invoicing and payment", "cat": "comm", "summary": "Default invoicing is 30% on award and 70% before delivery; parts and accessories in full on delivery. Payment is without set-off, before or at purchase or delivery. No cash. Payment terms are fatal. Collection after late payment adds 10% plus judicial and extrajudicial costs.", "sig": "Payment drives several other rights. Title does not pass until payment is complete [A.VIII]. The 70% invoice and the advance-payment trigger are tied to delivery timing [A.VI]. Non-compliance by the Principal switches off the guarantee, and a guarantee dispute does not release the Principal from its obligations [A.X]. A payment failure lets Pon Power suspend or dissolve, with the price falling due less instalments paid [A.XIII]. Part B repeats the payment and collection paragraphs word for word [B.III].", "subs": [{"lab": "1", "t": "Unless otherwise agreed: (a) 30% on awarding the order and 70% prior to delivery as referred to in Article VI paragraph 3; (b) parts or accessories invoiced in full on delivery."}, {"lab": "2", "t": "Unless otherwise agreed, payment is made without set-off, including additional costs, before or at purchase or at delivery. No cash; debit card, bank transfer or credit card only. Payment terms are fatal terms. Conditions may be attached to credit card payments."}, {"lab": "3", "t": "If collection follows late payment, the claim increases by 10% for administration costs, and judicial and extrajudicial costs are borne by the Principal."}]}, {"id": "A.X", "short": "Guarantee", "title": "Claim and guarantee", "cat": "liab", "summary": "Visible defects: written claim within five days of transfer. Hidden defects: immediately on discovery and within the guarantee period. Legal action within a year of a timely claim. Guarantee is 12 months from delivery (18 months maximum where Pon Power assembles) and 6 months for parts delivered separately. Caterpillar products follow the manufacturer's guarantee terms. A list of exclusions applies, and the guarantee falls away if the Principal is in default or carries out unauthorised work.", "sig": "The central remedy clause: under [A.XI] it is the full extent of Pon Power's liability. Its periods run from deemed delivery [A.VI], or from completed assembly where Pon Power assembles [A.VII]. It is conditional on the Principal's own performance, and a guarantee dispute does not suspend the Principal's obligations [A.IX]. Transport damage is excluded [A.VIII], and dissolution under [A.XIII] is without guarantee. Court claims must follow within a year, in the forum set by [A.XIV]. Part B borrows paragraph 4 as the remedy standard for repair guarantees [B.V].", "subs": [{"lab": "1", "t": "Visible defects: written, specified claim immediately on receipt and at the latest five days after transfer. Non-visible defects: immediately on discovery and within the guarantee period. Missing these periods ends all claims for that defect. Legal claims must be brought within a year after a timely claim."}, {"lab": "2", "t": "Pon Power vouches for the soundness of products and the quality of materials for 12 months after delivery under Article VI paragraph 3, excluding visible defects. Where Pon Power agreed to assemble or install: 12 months after assembly, at the latest 18 months after delivery."}, {"lab": "3", "t": "Parts delivered separately: 6 months after delivery. Paragraphs 1 and 2 also cover defects caused solely or largely by Pon Power's improper assembly. Where Pon Power assembles, the periods start on completion of assembly, ending in any event 18 months after delivery."}, {"lab": "4", "t": "Caterpillar products within \"our country\" (read as the Netherlands, given the later references to the Dutch border): remedied under the manufacturer's guarantee terms. Outside it: claims go to the local Caterpillar dealer; if Pon Power's help is wanted instead, transport, travel, waiting and lodging costs from the Dutch border are the Principal's. Non-Caterpillar products: repair or replacement of the defective part, or dispatch of a replacement part, at Pon Power's choice, covering free dispatch within the Netherlands and reasonable labour. Costs beyond that are the Principal's, and the Principal assists with disassembly and assembly."}, {"lab": "5", "t": "Third-party repair at Pon Power's expense only with written permission, at reasonable cost measured against Pon Power's cost level, by a third party designated by Pon Power, and only in three listed situations."}, {"lab": "6", "t": "Not covered: defects resulting wholly or partly from (a) disregard of operating and maintenance regulations or abnormal use; (b) causes other than material or construction faults, such as wear and tear, contamination, rust and paint damage, transport, freezing, overheating, overloading or dropping; (c) assembly or repair by third parties or the Principal, other than under paragraph 5; (d) to (f) materials, products, methods and constructions requested, supplied or instructed by the Principal."}, {"lab": "7", "t": "If the Principal fails to meet any obligation under the contract or a connected contract, properly or in time, Pon Power cannot be held to any guarantee."}, {"lab": "8", "t": "Disassembly, repair or other work on the product without Pon Power's prior written approval ends all guarantee entitlement."}, {"lab": "9", "t": "Replaced parts and products become Pon Power's property. Replacement does not extend the original guarantee period."}, {"lab": "10", "t": "No guarantee on inspections, consultancy and similar operations, and no responsibility for designs and parts made available by the Principal."}, {"lab": "11", "t": "Alleged non-performance of the guarantee does not absolve the Principal from its obligations under any agreement with Pon Power."}]}, {"id": "A.XI", "short": "Liability", "title": "Liability", "cat": "liab", "summary": "Liability is confined to compliance with the Article X guarantee. Except for gross negligence, all other liability is excluded, including business interruption, other consequential loss and third-party liability. Specific exclusions are listed. The Principal indemnifies Pon Power against third-party claims for damage for which liability is excluded.", "sig": "Makes the guarantee in [A.X] the limit of liability, with gross negligence as the stated exception. Its listed exclusions echo other clauses: third-party rights and Principal-supplied data [A.V], informal assembly help [A.VII], and the same events that make up force majeure [A.XII]. An agreed delay fine replaces compensation [A.VI]. Part B has the same structure for repairs [B.V].", "subs": [{"lab": "1", "t": "Liability is confined to compliance with the guarantee obligations in Article X."}, {"lab": "2", "t": "Except for gross negligence and paragraph 1, all liability is excluded, such as business interruption, other consequential loss and loss from liability to third parties."}, {"lab": "3", "t": "Pon Power is therefore not liable for: violation of third-party rights through use of data provided by the Principal; damage arising from materials, models, tools and other matters made available by the Principal; transport difficulties, fire and other serious disruption to its or its suppliers' business; civil-law consequences for the Principal of public-law violations by technicians or third parties engaged in the Principal's service."}, {"lab": "4", "t": "Assistance given in assembly, without Pon Power being assigned to carry out the assembly, is at the Principal's risk."}, {"lab": "5", "t": "The Principal holds harmless and indemnifies Pon Power against third-party claims for damage for which Pon Power's liability to the Principal is excluded."}]}, {"id": "A.XII", "short": "Force majeure", "title": "Force majeure", "cat": "liab", "summary": "Defines force majeure: any circumstance that prevents performance or makes it unreasonably difficult, and also war, threat of war, civil war, riot, industrial action, lockout, transport difficulties, fire and other serious disruption to Pon Power's business or that of its suppliers.", "sig": "A definition only; the consequences are elsewhere. It removes any agreed delay fine [A.VI], and it lets Pon Power suspend for up to six months or dissolve without compensation [A.XIII]. Part of its event list reappears as an exclusion of liability [A.XI]. The clauses that use the term give rights to Pon Power only.", "subs": [{"lab": "-", "t": "Definition of force majeure: any circumstance preventing performance or making it unreasonably difficult, plus the listed events."}]}, {"id": "A.XIII", "short": "Suspension", "title": "Suspension and dissolution", "cat": "liab", "summary": "Force majeure: Pon Power may suspend for up to 6 months or dissolve, without compensation, and require payment for work done. Principal default, feared inability to perform, or insolvency-type events: Pon Power may suspend or dissolve without notice of default or court intervention; the price becomes immediately due less instalments paid and costs saved. The Principal cannot claim dissolution with retroactive force.", "sig": "Pon Power's exit clause. Paragraph 1 is triggered by force majeure as defined in [A.XII]. Paragraph 2 is triggered by any failure of the Principal, which would include a payment failure under [A.IX]. Dissolution is without guarantee [A.X] and is backed by the take-back right [A.VIII]. Read with [A.VI], which restricts the Principal's own ability to dissolve for delay and sets the 10% charge when the Principal cancels.", "subs": [{"lab": "1", "t": "Force majeure: Pon Power may, without court intervention, suspend for a maximum of 6 months or dissolve in full or in part, without compensation. At the end of the suspension it must choose implementation or dissolution. It may require immediate payment for what has been performed."}, {"lab": "2", "t": "Principal default, good ground for fearing inability to perform, bankruptcy, suspension of payment, closure, liquidation or transfer of the business or a major portion of receivables: Pon Power may, without notice of default or court intervention, suspend each agreement for up to 6 months or dissolve, without compensation or guarantee."}, {"lab": "3", "t": "On suspension or dissolution under paragraph 2, the agreed price becomes immediately due, less instalments already paid and costs saved by Pon Power."}, {"lab": "4", "t": "The Principal may not claim dissolution with retroactive force."}]}, {"id": "A.XIV", "short": "Disputes & law", "title": "Disputes and applicable law", "cat": "disp", "summary": "Disputes go to the district court at Dordrecht, unless within the competence of the subdistrict court. Dutch law applies unless departed from in writing signed by both parties.", "sig": "Forum and law for Part A. The one-year period for legal claims on defects in [A.X] is pursued here. The signed-writing requirement for departing from Dutch law matches the written-deviation rule in [A.I]. Part B repeats the clause [B.VI].", "subs": [{"lab": "1", "t": "All disputes arising from a quote, agreement or coherent agreement under these conditions go to the district court at Dordrecht, unless within the competence of the subdistrict court."}, {"lab": "2", "t": "Dutch law applies, unless departed from in writing and signed by both parties."}]}, {"id": "A.XV", "short": "Privacy", "title": "Privacy and personal data", "cat": "comp", "summary": "Both parties cooperate on data-protection compliance. Pon Power complies with data-protection law, processes the Principal's personal data only on the Principal's behalf as required for the agreement, and applies technical and organisational security measures. A Pon Data Processing agreement may be attached and signed.", "sig": "Stands apart from the commercial clauses. Its only link inside the document is the matching clause in Part B [B.VII]. It points outside the document to data-protection law and to a separate Pon Data Processing agreement.", "subs": [{"lab": "1", "t": "Parties cooperate fully so that each can meet its obligations under data-protection law."}, {"lab": "2", "t": "Pon Power complies with applicable data-protection law relating to the Principal."}, {"lab": "3", "t": "Pon Power processes personal data relating to the Principal only on the Principal's behalf, as required to perform the agreement."}, {"lab": "4", "t": "Pon Power implements appropriate technical and organisational measures against unauthorised or unlawful processing."}, {"lab": "5", "t": "If deemed necessary, the Pon Data Processing agreement is attached and signed by the Principal."}]}, {"id": "A.XVI", "short": "Compliance", "title": "Compliance with law", "cat": "comp", "summary": "The Principal must comply with all applicable laws, including export controls, sanctions and embargoes, for goods supplied by Pon Power. It warrants that goods will not be re-exported, sold, transferred or used in breach, and indemnifies Pon Power and its affiliates.", "sig": "A warranty and indemnity given by the Principal. Its only link inside the document is the identical clause in Part B [B.VIII]. It sits beside, but does not refer to, the other indemnities given by the Principal in Articles V and XI.", "subs": [{"lab": "-", "t": "The Principal complies with all applicable laws, including export controls, sanctions and embargoes, warrants no re-export, sale, transfer or use in breach, and indemnifies, defends and holds harmless Pon Power and its affiliates."}]}, {"id": "B.I", "short": "General", "title": "General", "cat": "form", "summary": "Part B applies to all offers, orders and agreements for repairs, servicing and other services by Pon Power BV, unless both parties expressly agree otherwise in writing. Same two definitions as Part A.", "sig": "Entry point for Part B, mirroring [A.I]. The text does not say whether Part A also applies to repair work. The one express bridge between the parts is the reference to Part A Article X paragraph 4 in Article V of Part B.", "subs": [{"lab": "1", "t": "Scope of Part B: repairs, servicing and other services. Applies unless both parties expressly provide otherwise in writing."}, {"lab": "2", "t": "Definitions of Pon Power BV and Principal."}]}, {"id": "B.II", "short": "Quote & agreement", "title": "Quote and agreement", "cat": "form", "summary": "A written confirmation of earlier arrangements creates the agreement. A general description sent with it stands unless objected to within two working days. Pon Power may refuse an order if the scope set by the Principal does not sufficiently assure the outcome. Anything agreed beyond the written scope is additional work.", "sig": "Formation for repairs, with different mechanics from [A.III]. The right to refuse an under-scoped job connects to the guarantee conditions, where Pon Power only answers for repairs done with everything it found necessary [B.V]. Additional work is priced through the cost heads in [B.III].", "subs": [{"lab": "1", "t": "If either party confirms earlier arrangements in writing, the agreement takes effect through that confirmation. An accompanying general description is deemed correct if not objected to within two working days of receipt."}, {"lab": "2", "t": "If the Principal itself determines the extent of repairs or the parts to replace and Pon Power considers this insufficient to assure the outcome, Pon Power may refuse the order without compensation."}, {"lab": "3", "t": "Anything established with the Principal during performance beyond the work expressly stipulated in the written agreement or acceptance is additional work."}]}, {"id": "B.III", "short": "Price & payment", "title": "Price and conditions of payment", "cat": "comm", "summary": "Prices are based on cash payment and delivery ex warehouse or workshop unless agreed otherwise in writing. Repair costs comprise listed heads: expertise, labour, subcontractors, travel and accommodation, parts, auxiliary materials, testing and environmental surcharges. Payment without set-off, before or at delivery; no cash accepted. Collection after late payment adds 10% plus costs.", "sig": "Sets what a repair costs and when it is paid. The payment and collection paragraphs repeat [A.IX], while the price basis differs from [A.IV]. Costs outside the workshop and site-related costs are allocated to the Principal in [B.IV], and additional work under [B.II] is charged through the same cost heads. Note the wording: paragraph 1 says prices are based on cash payment, while paragraph 3 says payment in cash is not accepted.", "subs": [{"lab": "1", "t": "Prices are always based on cash payment and delivery ex warehouse or workshop, unless otherwise agreed in writing."}, {"lab": "2", "t": "Repair costs comprise: expertise; labour and supervision at current rates; subcontractor and supplier charges; travel and accommodation; used parts; auxiliary materials; additional testing costs or environmental surcharge."}, {"lab": "3", "t": "Payment without set-off, before or at purchase or delivery. No cash. Payment terms are fatal terms."}, {"lab": "4", "t": "If collection follows late payment, the claim increases by 10%, and judicial and extrajudicial costs are borne by the Principal."}]}, {"id": "B.IV", "short": "Repair conditions", "title": "Conditions in connection with repair work", "cat": "perf", "summary": "Workshop repairs: transport and other costs outside the workshop, and all risks to the items, are the Principal's. On-site repairs: the Principal provides a protected, lockable work area, immediate and undisturbed access, utilities and equipment, free assistance, safety measures, and insurance to Pon Power's satisfaction. Pon Power can reject responsibility if it is forced to accept help from the Principal's employees.", "sig": "The Principal's duties for repair work, comparable to the assembly duties in [A.VII]. The costs it shifts to the Principal sit on top of the cost heads in [B.III]. Paragraph 3 feeds the guarantee: forced use of the Principal's staff lets Pon Power reject responsibility, alongside the no-intervention condition in [B.V].", "subs": [{"lab": "1", "t": "Workshop repair: all transport and other costs incurred outside the Pon Power workshop, and all risks relating to the items, are for the Principal."}, {"lab": "2", "t": "On-location repair: the Principal provides a weather-protected, clean, lit, lockable area and complies with safety and fire regulations; ensures mechanics can start immediately and work undisturbed; bears costs of waiting, interruption or overtime not caused by the mechanics; provides help, energy, fuel, water and lifting and transport equipment; provides assistance free of charge; pays for dismantling and reinstalling surrounding structures; takes and maintains safety measures; and takes out insurance, to Pon Power's satisfaction, against damage from accident or fire for at least the duration of the work."}, {"lab": "3", "t": "Pon Power can reject responsibility for sound operation if it is forced to accept assistance from the Principal's employees, for instance because the Principal set the repair time too narrowly."}, {"lab": "4", "t": "Costs arising from non-performance of the conditions in this article are for the Principal."}]}, {"id": "B.V", "short": "Guarantee & liability", "title": "Guarantee and liability", "cat": "liab", "summary": "Pon Power answers for sound operation only if it determined the scope, method and staffing and the Principal did not intervene. Six-month guarantee from testing or return, for defects reported in writing (\"eight days subsequent to the first occurrence\"), remedied on the conditions of Part A Article X paragraph 4. The guarantee lapses for unwise use, ignored instructions or third-party repair. Liability is confined to the guarantee, except gross negligence. The Principal indemnifies Pon Power against third-party claims.", "sig": "The most connected clause in Part B. It imports its remedy standard from Part A [A.X] and repeats Part A's liability structure [A.XI]. Its conditions tie back to the Principal's choices on scope [B.II] and to staffing and intervention on site [B.IV].", "subs": [{"lab": "1", "t": "Responsibility for sound operation only if: the repair included everything Pon Power found necessary; Pon Power determined method, supervision and staffing; and the Principal refrained from intervention."}, {"lab": "2", "t": "Six months' guarantee on repair or revision work, from testing by Pon Power or return to the Principal. Defects from improperly mounted parts or inadequate craftsmanship, as judged by Pon Power, are remedied on the conditions of Part A Article X paragraph 4, if reported in writing. The source wording for the reporting period is \"eight days subsequent to the first occurrence\"."}, {"lab": "3", "t": "Guarantee claims lapse if the product was used unwisely, manufacturer's or Pon Power's instructions were not followed, or third parties repaired the defects."}, {"lab": "4", "t": "The guarantee period is not extended after defects are remedied."}, {"lab": "5", "t": "No guarantee where parts supplied but not assembled by Pon Power were wrongly assembled by the Principal or third parties."}, {"lab": "6", "t": "Liability is confined to the guarantee obligations in this article. Except for gross negligence and paragraph 2, all liability is excluded, such as business interruption, other consequential loss and third-party liability."}, {"lab": "7", "t": "The Principal holds harmless and indemnifies Pon Power against third-party claims for damage for which liability is excluded."}]}, {"id": "B.VI", "short": "Disputes & law", "title": "Disputes and applicable law", "cat": "disp", "summary": "Disputes go to the district court at Dordrecht, unless within the competence of a subdistrict judge. Dutch law applies unless departed from in writing signed by both parties.", "sig": "Repeats [A.XIV] for Part B, with minor wording differences.", "subs": [{"lab": "1", "t": "Disputes go to the district court at Dordrecht, unless within the competence of a subdistrict judge."}, {"lab": "2", "t": "Dutch law applies, unless departed from in writing and signed by both parties."}]}, {"id": "B.VII", "short": "Privacy", "title": "Privacy and personal data", "cat": "comp", "summary": "Same five paragraphs as Part A Article XV: cooperation, compliance, processing only on the Principal's behalf, security measures, and an optional Pon Data Processing agreement.", "sig": "Same text as [A.XV]. The only difference is one capital letter: paragraph 3 here says \"Agreement\", Part A says \"agreement\".", "subs": [{"lab": "1-5", "t": "Same content as Part A Article XV paragraphs 1 to 5."}]}, {"id": "B.VIII", "short": "Compliance", "title": "Compliance with law", "cat": "comp", "summary": "Same text as Part A Article XVI: compliance with export controls, sanctions and embargoes, a no-re-export warranty, and an indemnity for Pon Power and its affiliates.", "sig": "Identical to [A.XVI]. Note that it refers to goods supplied by Pon Power, although Part B concerns repairs and services.", "subs": [{"lab": "-", "t": "Same content as Part A Article XVI."}]}], "edges": [{"a": "A.IV", "b": "A.VIII", "type": "cond", "aa": "IV.1", "ab": "VIII.1", "from": "A.IV", "label": "Incoterm decides when risk passes", "detail": "Article VIII does not fix a risk-transfer point of its own. It refers back to whichever Incoterm (EXW or DDP) is used for pricing under Article IV.", "qa": "the prices quoted are based on delivery EXW or DDP in accordance with the most recent version of the INCOTERMS", "qb": "determined by the Incoterm used in clause IV", "basis": "express"}, {"a": "A.VI", "b": "A.VIII", "type": "prec", "aa": "VI.3", "ab": "VIII.2", "from": "A.VI", "label": "Delivered is not the same as owned", "detail": "VIII.2 is stated to be without prejudice to VI.3. The product can be deemed delivered once it is available and the Principal has been told, while title stays with Pon Power until all amounts due are settled.", "qa": "the product is deemed to be delivered, when it is available for transfer of ownership to the Principal", "qb": "Without prejudice to the stipulations of the foregoing paragraph and of clause VI paragraph 3, title to the product shall only pass to the Principal once all amounts due to us", "basis": "express"}, {"a": "A.VI", "b": "A.VIII", "type": "xref", "aa": "VI.7", "ab": "VIII.1", "from": null, "label": "Costs of not taking the product", "detail": "Two provisions deal with a Principal who does not take the product: VI.7 puts all resulting costs on the Principal, and VIII.1 allows storage costs to be charged after notice of default.", "qa": "all costs deriving from this (including freight, handling and storage costs) are to be paid by the Principal", "qb": "Pon Power will be entitled to charge the Principal for the costs of storing the product", "basis": "read"}, {"a": "A.IX", "b": "A.VIII", "type": "cond", "aa": "IX.2", "ab": "VIII.2", "from": "A.IX", "label": "Title passes only on full payment", "detail": "Retention of title. Ownership depends on settlement of everything due for the delivery and related work, including interest and costs.", "qa": "payment must be made, without setoff (and including additional costs), before or at purchase or at delivery of the sold goods", "qb": "once all amounts due to us from the Principal in connection with the delivery or related work have been settled in full, including interest and costs", "basis": "read"}, {"a": "A.VI", "b": "A.IX", "type": "time", "aa": "VI.3", "ab": "IX.1.a", "from": "A.VI", "label": "70% falls due before deemed delivery", "detail": "The second instalment is timed by reference to delivery as defined in VI.3, that is, when the product is available and the Principal has been informed.", "qa": "the product is deemed to be delivered, when it is available for transfer of ownership to the Principal", "qb": "70% prior to delivery as referred to in art. VI paragraph 3", "basis": "express"}, {"a": "A.VI", "b": "A.IX", "type": "time", "aa": "VI.1.d", "ab": "IX.1.a", "from": "A.IX", "label": "Advance payment starts the delivery clock", "detail": "Delivery time does not start until any agreed advance payment is received. The default 30% on award is such a payment (inference: IX.1 does not use the words \"in advance\").", "qa": "the day of receipt by Pon Power of that which in accordance with the agreement had to be paid in advance, prior to commencing the work", "qb": "30% on awarding the order;", "basis": "inference"}, {"a": "A.VI", "b": "A.X", "type": "time", "aa": "VI.3", "ab": "X.2", "from": "A.VI", "label": "Guarantee runs from deemed delivery", "detail": "The 12-month guarantee, the 18-month long-stop and the 6-month period for parts are all counted from delivery as defined in VI.3, not from physical receipt.", "qa": "the product is deemed to be delivered, when it is available for transfer of ownership to the Principal", "qb": "for a period of 12 months subsequent to delivery in accordance with article VI paragraph 3", "basis": "express"}, {"a": "A.VII", "b": "A.X", "type": "time", "aa": "VII", "ab": "X.3", "from": "A.VII", "label": "Pon Power assembly moves the start date", "detail": "Where Pon Power assembles or installs, the claim and guarantee periods start when that work is completed, subject to the 18-month long-stop from delivery.", "qa": "all arrangements, facilities and/or conditions that are necessary for setting up the product to be assembled", "qb": "commence on the day on which assembly/installation by Pon Power has been completed", "basis": "read"}, {"a": "A.VII", "b": "A.X", "type": "xref", "aa": "VII.1", "ab": "X.3", "from": null, "label": "Improper assembly by Pon Power is covered", "detail": "The claim and guarantee paragraphs extend to defects caused solely or largely by Pon Power's own improper assembly or installation.", "qa": "product to be assembled and/or the correct operation of the product in assembled state", "qb": "Paragraphs 1 and 2 are likewise applicable to defects whose cause lies solely or largely in improper assembly or installation by Pon Power.", "basis": "read"}, {"a": "A.VI", "b": "A.VII", "type": "time", "aa": "VI", "ab": "VII.4", "from": "A.VI", "label": "Article VI governs assembly time", "detail": "Express incorporation: the delivery-time rules (start, extension, no dissolution for delay, fine) apply likewise to assembly and installation time.", "qa": "The delivery time is based on the working conditions at the time of completion of the agreement", "qb": "With regard to the assembly/installation time, article VI is likewise applicable.", "basis": "express"}, {"a": "A.VI", "b": "A.VII", "type": "time", "aa": "VI.4", "ab": "VII.3", "from": "A.VII", "label": "Site failures extend delivery time", "detail": "VI.4 extends delivery time for any failure of the Principal to meet its obligations. The site duties in Article VII are such obligations (inference: VI.4 does not name Article VII).", "qa": "the delivery time is extended by the duration of the delay arising on the part of Pon Power as a result of the failure of the Principal to comply with any of the obligations arising from the agreement", "qb": "Damage and costs arising because the conditions set forth in this article have not been complied with or not in good time, are to be paid for by the Principal.", "basis": "inference"}, {"a": "A.VI", "b": "A.VII", "type": "xref", "aa": "VI.3", "ab": "VII.1", "from": null, "label": "Deemed delivery leaves assembly commitments intact", "detail": "A product can be deemed delivered before it is assembled. VI.3 preserves Pon Power's assembly and installation commitments.", "qa": "without prejudice to the obligation of Pon Power to comply with any commitments regarding assembly or installation", "qb": "except and insofar as this work is carried out by or on behalf of Pon Power", "basis": "read"}, {"a": "A.XII", "b": "A.VI", "type": "def", "aa": "XII", "ab": "VI.6", "from": "A.XII", "label": "Uses \"force majeure\" defined in XII", "detail": "Any agreed fine for late delivery is not owed where the delay results from force majeure, as defined in Article XII.", "qa": "force majeure shall mean: any circumstance as a result of which performance is prevented or made unreasonably difficult", "qb": "Such a fine is not owed if the exceeding of the delivery time is a result of force majeure.", "basis": "term"}, {"a": "A.XII", "b": "A.XIII", "type": "def", "aa": "XII", "ab": "XIII.1", "from": "A.XII", "label": "Uses \"force majeure\" defined in XII", "detail": "Article XII only defines the term. The consequence, suspension for up to six months or dissolution without compensation, is in XIII.1.", "qa": "force majeure shall mean: any circumstance as a result of which performance is prevented or made unreasonably difficult", "qb": "In the event of an impediment to the implementation of the agreement arising as a result of force majeure Pon Power shall be entitled", "basis": "term"}, {"a": "A.XI", "b": "A.XII", "type": "xref", "aa": "XI.3", "ab": "XII", "from": null, "label": "Same events in both clauses", "detail": "The same phrase appears as an exclusion of liability in XI.3 and as part of the force majeure definition in XII.", "qa": "transport difficulties, fire and other serious disruption to our business or that of our suppliers;", "qb": "transport difficulties, fire and other serious disruption to our business or that of our suppliers.", "basis": "read"}, {"a": "A.VI", "b": "A.XIII", "type": "cancel", "aa": "VI.5", "ab": "XIII.1", "from": null, "label": "Who may exit on delay", "detail": "For late delivery the Principal may not dissolve without judicial authorisation. Where the delay is force majeure, Pon Power may suspend for up to six months or dissolve without court intervention.", "qa": "this shall not entitle the Principal to wholly or partially dissolve the agreement", "qb": "to suspend the implementation of the agreement for a maximum of 6 months or to dissolve the agreement in full or in part, without being obliged to pay any compensation", "basis": "read"}, {"a": "A.VI", "b": "A.XIII", "type": "cancel", "aa": "VI.5", "ab": "XIII.4", "from": null, "label": "Limits on dissolution by the Principal", "detail": "Two separate limits on the Principal: no dissolution for delay without judicial authorisation (VI.5) and no dissolution with retroactive force (XIII.4).", "qa": "without having judicial authorization to do so", "qb": "The Principal is not entitled to claim dissolution of the agreement with retroactive force.", "basis": "read"}, {"a": "A.VI", "b": "A.XIII", "type": "cancel", "aa": "VI.8", "ab": "XIII.3", "from": null, "label": "Money consequences of an exit", "detail": "Different triggers, both with payment consequences. If the Principal cancels or fails to take possession: 10% of the price plus damages. If Pon Power suspends or dissolves for the Principal's default: the agreed price falls due less instalments paid and costs saved.", "qa": "the Principal shall, with immediate effect, owe 10% of the agreed price", "qb": "the agreed price becomes immediately due with deduction of the instalments already paid", "basis": "read"}, {"a": "A.IX", "b": "A.XIII", "type": "cancel", "aa": "IX.2", "ab": "XIII.2", "from": "A.IX", "label": "Payment failure lets Pon Power suspend or dissolve", "detail": "XIII.2 is triggered by failure to comply with any obligation, properly or in good time. Payment terms are fatal terms under IX.2 (inference: XIII.2 does not name payment specifically).", "qa": "Payment terms will be seen as a fatal terms.", "qb": "If the Principal fails to comply with any obligation deriving for him from the agreement concluded with Pon Power", "basis": "inference"}, {"a": "A.IX", "b": "A.XIII", "type": "xref", "aa": "IX.1", "ab": "XIII.3", "from": null, "label": "Instalments paid are deducted", "detail": "On suspension or dissolution for the Principal's default, the price becomes due less the instalments already paid under the invoicing schedule.", "qa": "30% on awarding the order;", "qb": "the agreed price becomes immediately due with deduction of the instalments already paid", "basis": "read"}, {"a": "A.IX", "b": "A.X", "type": "cond", "aa": "IX.2", "ab": "X.7", "from": "A.IX", "label": "Guarantee depends on the Principal performing", "detail": "X.7 removes any guarantee if the Principal fails to comply with any obligation, properly or in good time. Payment is one such obligation (inference: X.7 does not name payment specifically).", "qa": "payment must be made, without setoff (and including additional costs), before or at purchase or at delivery of the sold goods", "qb": "Pon Power cannot be held to any guarantee in these agreements, however it is referred to.", "basis": "inference"}, {"a": "A.IX", "b": "A.X", "type": "cond", "aa": "IX.2", "ab": "X.11", "from": "A.X", "label": "A guarantee dispute does not suspend obligations", "detail": "Alleged non-performance of the guarantee does not release the Principal from its obligations. Payment is in any case to be made without set-off.", "qa": "without setoff (and including additional costs)", "qb": "does not absolve the Principal from his obligations deriving from any agreement concluded with Pon Power", "basis": "read"}, {"a": "A.X", "b": "A.XI", "type": "prec", "aa": "X.2", "ab": "XI.1", "from": "A.XI", "label": "Guarantee is the limit of liability", "detail": "XI.1 confines liability to compliance with the Article X guarantee obligations. XI.2 then excludes all other liability, except for gross negligence.", "qa": "Pon Power vouches for the soundness of the products supplied", "qb": "The liability of Pon Power is confined to compliance with the guarantee obligations described in article X of these conditions.", "basis": "express"}, {"a": "A.X", "b": "A.XI", "type": "carve", "aa": "X.6.f", "ab": "XI.3", "from": null, "label": "Principal-supplied materials excluded twice", "detail": "Materials and products supplied by the Principal are outside the guarantee (X.6) and outside liability (XI.3).", "qa": "materials and products supplied from, by or on behalf of the Principal", "qb": "raw materials, semimanufactures, models, tools, and other matters made available by the Principal", "basis": "read"}, {"a": "A.VI", "b": "A.XI", "type": "xref", "aa": "VI.6", "ab": "XI.2", "from": null, "label": "Fine replaces compensation", "detail": "An agreed delay fine stands in place of any entitlement to compensation, and Article XI separately excludes business interruption and other consequential loss.", "qa": "must be deemed to be set in the place of any entitlement of the Principal to compensation", "qb": "such as loss through business interruption, other consequential loss and loss as a result of liability vis-à-vis third parties is excluded", "basis": "read"}, {"a": "A.V", "b": "A.XI", "type": "xref", "aa": "V.3", "ab": "XI.3", "from": null, "label": "Third-party rights: indemnity and exclusion", "detail": "The Principal indemnifies Pon Power for third-party claims under Article V, and Pon Power excludes liability for third-party rights violated through data the Principal provided.", "qa": "The Principal shall indemnify us in respect of all direct and indirect consequences of claims asserted against us by third parties", "qb": "the violation of copyright, licences or other rights of third parties as a result of the use of data provided by or on behalf of the Principal", "basis": "read"}, {"a": "A.VII", "b": "A.XI", "type": "carve", "aa": "VII.1", "ab": "XI.4", "from": "A.XI", "label": "Informal assembly help is at the Principal's risk", "detail": "Where Pon Power is not assigned to carry out the assembly but helps anyway, that help is at the Principal's risk.", "qa": "except and insofar as this work is carried out by or on behalf of Pon Power", "qb": "If Pon Power, without being assigned to carry out the assembly, provides assistance and help of whatever kind in the course of the assembly, this will be done at the risk of the Principal.", "basis": "read"}, {"a": "A.X", "b": "A.VIII", "type": "carve", "aa": "X.6.b", "ab": "VIII.1", "from": "A.X", "label": "Transport damage is outside the guarantee", "detail": "Transport is listed among causes that are not material or construction faults. Who bears transit risk is decided by the Incoterm under VIII.1.", "qa": "rust and paint damage, transport, freezing, overheating, overloading", "qb": "Passing of the risk in respect of all direct and consequential damages is in principle, determined by the Incoterm used in clause IV.", "basis": "read"}, {"a": "A.X", "b": "A.XIII", "type": "cancel", "aa": "X.7", "ab": "XIII.2", "from": null, "label": "Dissolution is without guarantee", "detail": "Both clauses remove the guarantee when the Principal is in default: X.7 directly, and XIII.2 by allowing dissolution without compensation or guarantee.", "qa": "Pon Power cannot be held to any guarantee in these agreements", "qb": "to dissolve them in full or in part without being held to any compensation or guarantee", "basis": "read"}, {"a": "A.XIII", "b": "A.VIII", "type": "xref", "aa": "XIII.2", "ab": "VIII.3", "from": null, "label": "Take-back right supports exit", "detail": "On default or insolvency-type events Pon Power may suspend or dissolve. VIII.3 gives access to take the products back while title is retained (inference: neither clause refers to the other).", "qa": "as well as in the case of bankruptcy, suspension of payment, closure, liquidation", "qb": "by taking back the delivered products, including any disassembly that may be required", "basis": "inference"}, {"a": "A.III", "b": "A.VI", "type": "time", "aa": "III.1", "ab": "VI.1.a", "from": "A.III", "label": "Completion starts the delivery clock", "detail": "Delivery time cannot start before the agreement is completed. Article III fixes that day: signature by the Principal or dispatch of Pon Power's written confirmation.", "qa": "it is considered as completed on the day the contract is signed by the Principal, or on the day of dispatch of the written confirmation of the order by Pon Power", "qb": "the day of completion of the agreement;", "basis": "read"}, {"a": "A.III", "b": "A.IV", "type": "time", "aa": "III.1", "ab": "IV.3", "from": "A.III", "label": "Price can rise after completion", "detail": "The right to raise the price applies to cost rises after the completion date fixed by Article III.", "qa": "it is considered as completed on the day the contract is signed by the Principal", "qb": "after the date of completion of the agreement, one or more of the cost price factors have been subject to a rise", "basis": "read"}, {"a": "A.II", "b": "A.III", "type": "xref", "aa": "II.1", "ab": "III.1", "from": null, "label": "Quote, then agreement", "detail": "A quote carries no commitment. The agreement is completed only by signature or by Pon Power's written confirmation.", "qa": "Each quote made by Pon Power involves no commitment", "qb": "it is considered as completed on the day the contract is signed", "basis": "read"}, {"a": "A.II", "b": "A.IV", "type": "xref", "aa": "II.1", "ab": "IV.4", "from": null, "label": "Assumptions behind every quote", "detail": "Article IV states what each quote assumes: normal circumstances and normal working hours.", "qa": "Each quote made by Pon Power involves no commitment", "qb": "Each quote of Pon Power is based on implementation of the agreement under normal circumstances and during normal working hours.", "basis": "read"}, {"a": "A.IV", "b": "A.VII", "type": "xref", "aa": "IV.2", "ab": "VII.1", "from": null, "label": "Price may include assembly", "detail": "Where assembly is agreed, the price includes it. The Principal's preparatory duties for that assembly are in Article VII.", "qa": "calculated including the agreed assembly and delivery of the product in operating order at the location referred to in the quote", "qb": "all arrangements, facilities and/or conditions that are necessary for setting up the product", "basis": "read"}, {"a": "A.IV", "b": "A.VII", "type": "xref", "aa": "IV.4", "ab": "VII.2.a", "from": null, "label": "Normal working hours", "detail": "Quotes assume normal working hours. Article VII lets Pon Power work outside them where it deems this necessary, with timely notice.", "qa": "under normal circumstances and during normal working hours", "qb": "outside normal working hours if this is deemed necessary by Pon Power", "basis": "read"}, {"a": "A.III", "b": "A.V", "type": "xref", "aa": "III.2", "ab": "V.1", "from": null, "label": "What binds Pon Power", "detail": "Both clauses narrow what binds Pon Power: verbal promises only from authorised persons, and catalogue data only if written into the signed contract or confirmation.", "qa": "Verbal promises, arrangements or other juristic acts shall only be binding upon us if made or performed by persons holding a specific proxy", "qb": "are only binding if and insofar as they have been explicitly included in a contract signed by the Principal and Pon Power", "basis": "read"}, {"a": "A.I", "b": "A.XIV", "type": "xref", "aa": "I.1", "ab": "XIV.2", "from": null, "label": "Departing from the conditions needs writing", "detail": "The conditions apply unless both parties expressly provide otherwise in writing. Departing from Dutch law needs a writing signed by both parties.", "qa": "unless both parties expressly provide otherwise, in writing", "qb": "unless this is departed from in writing and signed by both parties", "basis": "read"}, {"a": "A.X", "b": "A.XIV", "type": "xref", "aa": "X.1", "ab": "XIV.1", "from": null, "label": "One year to go to court", "detail": "Legal claims on a defect must be brought within a year of a timely claim. Article XIV names the court.", "qa": "Legal claims in this matter should be submitted within a year after the claim has been submitted in good time", "qb": "will be submitted to the district court at Dordrecht", "basis": "read"}, {"a": "B.II", "b": "B.V", "type": "cond", "aa": "II.2", "ab": "V.1", "from": null, "label": "Scope set by the Principal affects responsibility", "detail": "Pon Power may refuse a job whose scope, as set by the Principal, does not sufficiently assure the outcome. It accepts responsibility only where the repair included everything it found necessary.", "qa": "this does not provide sufficient guarantee with respect to the outcome of the work to be done", "qb": "the repair has been carried out with all the activities, innovations, adjustments and deliveries as found necessary by Pon Power", "basis": "read"}, {"a": "B.IV", "b": "B.V", "type": "carve", "aa": "IV.3", "ab": "V.1", "from": "B.IV", "label": "Forced use of the Principal's staff", "detail": "Pon Power can reject responsibility where it is forced to accept help from the Principal's employees. The guarantee is in any case conditional on the Principal not intervening.", "qa": "Pon Power can reject the responsibility for the sound operation of repaired or revised products or part thereof", "qb": "the Principal refrains from any form of intervention in the nature and/or the implementation of the activities", "basis": "read"}, {"a": "B.II", "b": "B.III", "type": "xref", "aa": "II.3", "ab": "III.2", "from": null, "label": "Additional work and the cost heads", "detail": "Work agreed beyond the written scope is additional work. Article III lists what repair costs comprise (inference: Article III does not mention additional work by name).", "qa": "shall be regarded as being additional work", "qb": "labour, supervision of inspectors and mechanics at current rates", "basis": "inference"}, {"a": "B.III", "b": "B.IV", "type": "xref", "aa": "III.1", "ab": "IV.1", "from": null, "label": "Costs outside the workshop", "detail": "Prices assume delivery ex warehouse or workshop. Transport and other costs incurred outside the workshop are the Principal's.", "qa": "ex warehouse or workshop, unless otherwise is agreed in writing", "qb": "all transport and other costs that will be incurred outside the Pon Power workshop", "basis": "read"}, {"a": "A.X", "b": "B.V", "type": "cond", "aa": "X.4", "ab": "V.2", "from": "A.X", "label": "Repair defects remedied on A.X.4 terms", "detail": "The only express cross-reference between the two parts. Defects in repair work are remedied on the same conditions as Part A Article X paragraph 4.", "qa": "comprises the repair and/or replacement of the defective part on the premises of Pon Power or elsewhere", "qb": "remedied as soon as possible on the same conditions as given in article X paragraph 4", "basis": "express"}, {"a": "A.X", "b": "B.V", "type": "par", "aa": "X.2", "ab": "V.2", "from": null, "label": "Guarantee periods: 12 months and six months", "detail": "Products carry a 12-month guarantee, repair and revision work six months. Neither period is extended by remedial work (A.X.9, B.V.4).", "qa": "for a period of 12 months subsequent to delivery", "qb": "Pon Power grants six months guarantee on all repair or revision work carried out", "basis": "match"}, {"a": "A.XI", "b": "B.V", "type": "par", "aa": "XI.1", "ab": "V.6", "from": null, "label": "Liability confined to the guarantee", "detail": "Same structure in both parts: liability confined to the guarantee, other liability excluded except for gross negligence, and an indemnity from the Principal for third-party claims.", "qa": "The liability of Pon Power is confined to compliance with the guarantee obligations described in article X of these conditions.", "qb": "The liability of Pon Power is confined to performance of the guarantee obligations described in this article.", "basis": "match"}, {"a": "A.I", "b": "B.I", "type": "par", "aa": "I.1", "ab": "I.1", "from": null, "label": "Scope clauses", "detail": "Same scope wording, applied to product deliveries in Part A and to repairs, servicing and other services in Part B.", "qa": "relating to deliveries of products and/or services to be made by Pon Power BV", "qb": "relating to repairs, servicing or other services to be performed or rendered by Pon Power BV", "basis": "match"}, {"a": "A.III", "b": "B.II", "type": "par", "aa": "III.1", "ab": "II.1", "from": null, "label": "How the agreement is formed", "detail": "Part A: completion on signature or on dispatch of Pon Power's written confirmation. Part B: a written confirmation by either party of earlier arrangements.", "qa": "written confirmation of the order by Pon Power", "qb": "the agreement shall take effect as a result of that confirmation", "basis": "match"}, {"a": "A.IV", "b": "B.III", "type": "par", "aa": "IV.1", "ab": "III.1", "from": null, "label": "Price basis", "detail": "Products are priced EXW or DDP under INCOTERMS. Repairs are priced ex warehouse or workshop.", "qa": "the prices quoted are based on delivery EXW or DDP", "qb": "Prices given by Pon Power are always based on cash payment and delivery ex warehouse or workshop", "basis": "match"}, {"a": "A.IX", "b": "B.III", "type": "par", "aa": "IX.2-3", "ab": "III.3-4", "from": null, "label": "Payment and collection paragraphs", "detail": "The payment paragraph (no set-off, no cash, fatal terms) and the late-payment collection paragraph (10% plus costs) are the same in both parts.", "qa": "the amount of the claim will be increased by 10% to cover administration costs", "qb": "the amount of the claim will be increased by 10% to cover administration costs", "basis": "match"}, {"a": "A.VII", "b": "B.IV", "type": "par", "aa": "VII.2.g", "ab": "IV.2", "from": null, "label": "Site duties of the Principal", "detail": "Both parts require the Principal to prepare the site, provide utilities and help, and maintain safety measures, for assembly in Part A and for on-location repairs in Part B.", "qa": "all necessary safety and precautionary measures have been taken", "qb": "take all necessary safety and precautionary measures and maintain these", "basis": "match"}, {"a": "A.XIV", "b": "B.VI", "type": "par", "aa": "XIV", "ab": "VI", "from": null, "label": "Forum and governing law", "detail": "Same forum (district court at Dordrecht) and same law (Dutch) in both parts.", "qa": "will be submitted to the district court at Dordrecht", "qb": "will be submitted to the district court at Dordrecht", "basis": "match"}, {"a": "A.XV", "b": "B.VII", "type": "par", "aa": "XV", "ab": "VII", "from": null, "label": "Privacy clause", "detail": "The same five paragraphs appear in both parts. The only difference is one capital letter (\"Agreement\" in B.VII.3).", "qa": "Pon Power shall process personal data relating to Principal only on behalf of Principal", "qb": "Pon Power shall process personal data relating to Principal only on behalf of Principal", "basis": "match"}, {"a": "A.XVI", "b": "B.VIII", "type": "par", "aa": "XVI", "ab": "VIII", "from": null, "label": "Compliance clause", "detail": "The text is identical in both parts.", "qa": "shall not be re-exported, sold, transferred, or used in breach of the aforementioned", "qb": "shall not be re-exported, sold, transferred, or used in breach of the aforementioned", "basis": "match"}], "terms": [{"term": "force majeure", "def_": "A.XII", "meaning": "Any circumstance that prevents performance or makes it unreasonably difficult, plus the listed events: war, threat of war, civil war, riot, industrial action, lockout, transport difficulties, fire and other serious disruption to Pon Power's or its suppliers' business.", "used": ["A.VI", "A.XIII"]}, {"term": "delivered / delivery", "def_": "A.VI", "meaning": "Deemed delivery under VI.3: the product is available for transfer of ownership, or can be placed in the Principal's power, and the Principal has been informed.", "used": ["A.IX", "A.X", "A.VIII"]}, {"term": "completion of the agreement", "def_": "A.III", "meaning": "For a written agreement: the day the Principal signs, or the day Pon Power dispatches its written order confirmation.", "used": ["A.IV", "A.VI"]}, {"term": "additional work", "def_": "B.II", "meaning": "Anything established with the Principal during performance over and above the work expressly stipulated in the written agreement or acceptance.", "used": []}], "docs": [{"name": "INCOTERMS", "short": "INCOTERMS", "how": "ICC trade terms (EXW, DDP). Decide the price basis and when risk passes.", "refs": [{"c": "A.IV", "a": "IV.1", "q": "in accordance with the most recent version of the INCOTERMS"}, {"c": "A.VIII", "a": "VIII.1", "q": "determined by the Incoterm used in clause IV"}]}, {"name": "Quote or offer", "short": "Quote / offer", "how": "Pon Power's quote. It is the document that brings the conditions in, and it is not binding by itself.", "refs": [{"c": "A.I", "a": "I.2", "q": "the party referring in his quote to these conditions"}, {"c": "A.II", "a": "II.1", "q": "Each quote made by Pon Power involves no commitment"}, {"c": "A.IV", "a": "IV.4", "q": "Each quote of Pon Power is based on implementation of the agreement"}, {"c": "B.I", "a": "I.2", "q": "the party that refers to these terms and conditions in its offer(s)"}]}, {"name": "Signed contract or order confirmation", "short": "Contract / confirmation", "how": "The written instrument that completes the agreement and fixes what is binding.", "refs": [{"c": "A.III", "a": "III.1", "q": "the written confirmation of the order by Pon Power"}, {"c": "A.V", "a": "V.1", "q": "a confirmation of the order signed by Pon Power"}, {"c": "B.II", "a": "II.3", "q": "the work expressly stipulated in the written agreement or, failing that, in the written acceptance"}]}, {"name": "Judicial authorisation", "short": "Court authorisation", "how": "A court decision the Principal needs before dissolving for delay or having the work done by others.", "refs": [{"c": "A.VI", "a": "VI.5", "q": "without having judicial authorization to do so"}]}, {"name": "VCA guidelines", "short": "VCA guidelines", "how": "Dutch contractor safety certification standard. Sets the safety level for assembly sites.", "refs": [{"c": "A.VII", "a": "VII.2", "q": "in accordance with the guidelines for VCA certified work"}]}, {"name": "Government and safety regulations", "short": "Govt / safety regs", "how": "Public-law rules on accommodation, safety and fire prevention that the Principal must meet on site (not named).", "refs": [{"c": "A.VII", "a": "VII.2", "q": "as required by virtue of governmental regulations, the agreement or practice"}, {"c": "A.VII", "a": "VII.2", "q": "is compliant with all government regulations"}, {"c": "A.XI", "a": "XI.3", "q": "regulations of public law"}, {"c": "B.IV", "a": "IV.2", "q": "all regulations with regard to safety, fire prevention, etc. have been complied with"}, {"c": "B.IV", "a": "IV.2", "q": "applicable regulations of the government with regard to the work"}]}, {"name": "Manufacturer's guarantee terms", "short": "Maker's guarantee", "how": "The manufacturer's own guarantee terms and conditions, which govern remedies for Caterpillar products.", "refs": [{"c": "A.X", "a": "X.4", "q": "in accordance with the terms and conditions of guarantee the manufacturer made especially valid for those products"}]}, {"name": "Operating and maintenance regulations", "short": "O&M regulations", "how": "Disregarding them takes a defect outside the guarantee.", "refs": [{"c": "A.X", "a": "X.6", "q": "operating and maintenance regulations"}]}, {"name": "Manufacturer's instructions for use", "short": "Maker's instructions", "how": "Not following them ends guarantee claims on repair work.", "refs": [{"c": "B.V", "a": "V.3", "q": "the instructions of the manufacturer for use"}]}, {"name": "Insurance policy", "short": "Insurance", "how": "Cover the Principal must take out for on-location repair work, to Pon Power's satisfaction.", "refs": [{"c": "B.IV", "a": "IV.2", "q": "take out insurance, to the satisfaction of Pon Power"}]}, {"name": "Dutch law", "short": "Dutch law", "how": "Governing law for both parts.", "refs": [{"c": "A.XIV", "a": "XIV.2", "q": "Dutch law will be applicable to all agreements"}, {"c": "B.VI", "a": "VI.2", "q": "Dutch law will be applicable to all agreements"}]}, {"name": "Pon Data Processing agreement", "short": "Pon DPA", "how": "Separate agreement that may be attached and signed.", "refs": [{"c": "A.XV", "a": "XV.5", "q": "the Pon Data Processing agreement shall be attached as Attachment"}, {"c": "B.VII", "a": "VII.5", "q": "the Pon Data Processing agreement shall be attached as Attachment"}]}, {"name": "Data-protection laws", "short": "Data-protection law", "how": "Applicable personal-data laws and regulations (not named).", "refs": [{"c": "A.XV", "a": "XV.1", "q": "applicable relevant laws and regulations in respect of the protection of personal data"}, {"c": "B.VII", "a": "VII.1", "q": "applicable relevant laws and regulations in respect of the protection of personal data"}]}, {"name": "Export control and sanctions laws", "short": "Export / sanctions law", "how": "Applicable export controls, sanctions and embargoes (not named).", "refs": [{"c": "A.XVI", "a": "XVI", "q": "any applicable export controls, sanctions, embargoes or other restrictions"}, {"c": "B.VIII", "a": "VIII", "q": "any applicable export controls, sanctions, embargoes or other restrictions"}]}], "nq": 149};
+const TYPES = [
+ ['cond','Condition','One clause\'s right or outcome depends on a requirement or rule in another.','A.IX → A.VIII: title passes only once everything due is paid.'],
+ ['cancel','Suspension and exit','Cancellation, suspension or dissolution rights and their consequences.','A.IX → A.XIII: failure to perform lets Pon Power suspend or dissolve.'],
+ ['prec','Precedence','One clause limits, displaces or is preserved over another.','A.XI → A.X: liability is confined to the guarantee.'],
+ ['carve','Carve-out','An express exclusion from another clause\'s scope.','A.X → A.VIII: transport damage is outside the guarantee.'],
+ ['time','Timing','One clause sets the clock or window for another.','A.VI → A.X: guarantee periods run from deemed delivery.'],
+ ['def','Defined term','A clause uses a term defined elsewhere.','A.XII → A.XIII: "force majeure".'],
+ ['par','Parallel','Part A and Part B contain the same or a matching rule.','A.IX and B.III: identical payment paragraphs.'],
+ ['xref','Cross-reference','Operational link where neither clause controls the other. Shown faint until selected.','A.II and A.IV: what each quote assumes.']
+];
+const CATS = [
+ ['form','Formation and scope','When the conditions apply and how an agreement comes into being.'],
+ ['comm','Price and payment','What is charged, when it is invoiced and how it is paid.'],
+ ['perf','Delivery and site','Delivery time, assembly, and what the Principal must provide on site.'],
+ ['title','Title and IP','Risk, ownership of the goods, and ownership of drawings and know-how.'],
+ ['liab','Liability and risk','Guarantee, liability limits, force majeure, suspension and dissolution.'],
+ ['comp','Compliance','Personal data and export control and sanctions duties.'],
+ ['disp','Disputes','Forum and governing law.']
+];
+const TN = Object.fromEntries(TYPES.map(t=>[t[0],t[1]])), CN = Object.fromEntries(CATS.map(c=>[c[0],c[1]]));
+const TPRI = ['cond','cancel','prec','carve','time','def','par','xref'];
+const N = DATA.nodes, E = DATA.edges, byId = Object.fromEntries(N.map(n=>[n.id,n]));
+const NS = 'http://www.w3.org/2000/svg';
+const $ = s=>document.querySelector(s);
+const esc = s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const el = (tag,attrs={},parent)=>{const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e};
+
+/* ---------- pairs (bundle links between the same two clauses) ---------- */
+const pairs = [], pairBy = {};
+E.forEach((e,i)=>{e.i=i;const k=[e.a,e.b].sort().join('|');let p=pairBy[k];if(!p){p=pairBy[k]={k,a:e.a,b:e.b,links:[]};pairs.push(p)}p.links.push(e)});
+pairs.forEach(p=>{p.type=TPRI.find(t=>p.links.some(l=>l.type===t));const fs=new Set(p.links.filter(l=>l.type===p.type).map(l=>l.from));p.from=fs.size===1?[...fs][0]:null;p.types=new Set(p.links.map(l=>l.type))});
+N.forEach(n=>{n.pairs=pairs.filter(p=>p.a===n.id||p.b===n.id);n.count=E.filter(e=>e.a===n.id||e.b===n.id).length});
+const other=(p,id)=>p.a===id?p.b:p.a;
+
+/* ---------- geometry ---------- */
+const C=500, GAP=7, W=(360-2*GAP)/N.length;
+let ang=GAP/2;
+N.forEach((n,i)=>{if(i>0&&n.id[0]!==N[i-1].id[0])ang+=GAP;n.a0=ang;n.a1=ang+W;n.mid=ang+W/2;ang+=W});
+const pt=(r,d)=>{const t=d*Math.PI/180;return [C+r*Math.sin(t),C-r*Math.cos(t)]};
+const f=v=>v.toFixed(2);
+const arc=(r,a0,a1,rev)=>{const [x0,y0]=pt(r,rev?a1:a0),[x1,y1]=pt(r,rev?a0:a1);return `M${f(x0)} ${f(y0)}A${r} ${r} 0 ${Math.abs(a1-a0)>180?1:0} ${rev?0:1} ${f(x1)} ${f(y1)}`};
+const ring=(r0,r1,a0,a1)=>{const [x0,y0]=pt(r1,a0),[x1,y1]=pt(r1,a1),[x2,y2]=pt(r0,a1),[x3,y3]=pt(r0,a0);return `M${f(x0)} ${f(y0)}A${r1} ${r1} 0 0 1 ${f(x1)} ${f(y1)}L${f(x2)} ${f(y2)}A${r0} ${r0} 0 0 0 ${f(x3)} ${f(y3)}Z`};
+const svg=$('#svg');
+const defs=el('defs',{},svg);
+TYPES.forEach(t=>{const m=el('marker',{id:'ar-'+t[0],viewBox:'0 0 10 10',refX:8.5,refY:5,markerWidth:5.5,markerHeight:5.5,orient:'auto-start-reverse',markerUnits:'strokeWidth'},defs);el('path',{d:'M0 0L10 5L0 10z',fill:`var(--t-${t[0]})`},m)});
+const rot=el('g',{id:'rot'},svg), gDocs=el('g',{},rot), gChords=el('g',{},rot), gHot=el('g',{},rot), gWedges=el('g',{},rot), gBadges=el('g',{},rot);
+
+/* part arcs */
+[['A','Part A · Products'],['B','Part B · Repairs and services']].forEach(([p,lab])=>{
+  const ns=N.filter(n=>n.id[0]===p),a0=ns[0].a0,a1=ns[ns.length-1].a1,mid=(a0+a1)/2,rev=mid>90&&mid<270;
+  el('path',{class:'partarc',d:arc(492,a0,a1)},rot);
+  el('path',{id:'pa-'+p,d:arc(rev?517:503,a0,a1,rev),fill:'none'},defs);
+  const t=el('text',{class:'partlab'},rot);const tp=el('textPath',{href:'#pa-'+p,startOffset:'50%','text-anchor':'middle'},t);tp.textContent=lab;
+});
+
+/* chord endpoints: spread each clause's chords across its inner edge */
+N.forEach(n=>{const ps=n.pairs.slice().sort((p,q)=>{const d=x=>((byId[other(x,n.id)].mid-n.mid+540)%360);return d(q)-d(p)});const m=ps.length;ps.forEach((p,i)=>{(p.at=p.at||{})[n.id]=n.mid+(m>1?(i/(m-1)-.5)*(W-4):0)})});
+const R_IN=360;
+pairs.forEach(p=>{
+  const from=p.from||p.a,to=other(p,from),a=p.at[from],b=p.at[to];
+  let d=Math.abs(a-b);if(d>180)d=360-d;
+  let m=(a+b)/2;if(Math.abs(a-b)>180)m+=180;
+  const cr=R_IN*Math.max(0,1-d/150)*.9,[x0,y0]=pt(R_IN,a),[x1,y1]=pt(p.from?R_IN-5:R_IN,b),[cx,cy]=pt(cr,m);
+  p.d=`M${f(x0)} ${f(y0)}Q${f(cx)} ${f(cy)} ${f(x1)} ${f(y1)}`;
+  p.w=1.5+Math.min(3,p.links.length-1)*1.1;
+  const attrs={class:'chord'+(p.type==='xref'?' x':'')+(p.type==='par'?' dash':''),d:p.d,stroke:`var(--t-${p.type})`,'stroke-width':p.w};
+  if(p.from)attrs['marker-end']=`url(#ar-${p.type})`;
+  p.el=el('path',attrs,gChords);
+  p.el.addEventListener('mouseenter',ev=>{S.hp=p;refresh();showTip(ev,p)});
+  p.el.addEventListener('mousemove',ev=>showTip(ev,p));
+  p.el.addEventListener('mouseleave',()=>{S.hp=null;hideTip();refresh()});
+  p.el.addEventListener('click',()=>{pin(from,p.links[0].i)});
+});
+
+/* wedges */
+N.forEach(n=>{
+  const g=el('g',{class:'wedge',tabindex:0,role:'button','aria-label':`${n.id} ${n.title}, ${n.count} links`,style:`--c:var(--c-${n.cat})`},gWedges);
+  n.g=g;
+  el('path',{class:'band',d:ring(364,470,n.a0,n.a1)},g);
+  el('path',{class:'glow',d:ring(365,469,n.a0+.15,n.a1-.15)},g);
+  el('path',{class:'cat',d:ring(472,484,n.a0+.25,n.a1-.25)},g);
+  const rev=n.mid>90&&n.mid<270;
+  el('path',{id:'tp-'+n.id,d:arc(rev?452:443,n.a0+.6,n.a1-.6,rev),fill:'none'},defs);
+  const t=el('text',{class:'ttl'},g);const tp=el('textPath',{href:'#tp-'+n.id,startOffset:'50%','text-anchor':'middle'},t);tp.textContent=n.short;n.tt=t;
+  const [nx,ny]=pt(404,n.mid);el('text',{class:'num',x:f(nx),y:f(ny-6)},g).textContent=n.id;
+  el('text',{class:'cnt',x:f(nx),y:f(ny+12)},g).textContent=n.count+(n.count===1?' link':' links');
+  g.addEventListener('mouseenter',()=>{S.hover=n.id;refresh()});
+  g.addEventListener('mouseleave',()=>{S.hover=null;refresh()});
+  g.addEventListener('click',()=>pin(S.pin===n.id&&S.focus==null?null:n.id));
+  g.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();pin(S.pin===n.id?null:n.id)}});
+  const b=el('g',{class:'badge',visibility:'hidden'},gBadges);const [bx,by]=pt(346,n.mid);el('circle',{cx:f(bx),cy:f(by),r:10},b);n.bt=el('text',{x:f(bx),y:f(by)},b);n.badge=b;
+});
+function fitTitles(){N.forEach(n=>{const max=(2*Math.PI*443*(W-1.6)/360);let s=11.5;n.tt.style.fontSize=s+'px';while(n.tt.getComputedTextLength()>max&&s>7.5){s-=.5;n.tt.style.fontSize=s+'px'}})}
+svg.addEventListener('mouseleave',()=>{S.hover=null;S.hp=null;hideTip();refresh()});
+const hub=el('g',{class:'hub'},svg);const hubBig=el('text',{class:'big',x:C,y:C-6},hub),hubSm=el('text',{x:C,y:C+26},hub);
+
+/* ---------- state ---------- */
+const S={hover:null,pin:null,focus:null,hp:null,ht:new Set(),hc:new Set(),doc:null,hdoc:null};
+const DOCS=DATA.docs;DOCS.forEach((d,i)=>{d.i=i;d.cs=[...new Set(d.refs.map(r=>r.c))]});
+function refresh(){
+  const dAct=S.hover?null:(S.hdoc!=null?S.hdoc:(S.pin?null:S.doc));
+  if(dAct!=null){
+    const d=DOCS[dAct];
+    N.forEach(n=>{const c=n.g.classList,inn=d.cs.includes(n.id);c.remove('sel','hl');c.toggle('nb',inn);c.toggle('dim',!inn);n.badge.setAttribute('visibility','hidden')});
+    gHot.textContent='';pairs.forEach(p=>{p.el.classList.remove('on');p.el.classList.add('off')});
+    DOCS.forEach(x=>{x.g.classList.toggle('sel',x===d);x.g.classList.remove('on');x.g.classList.toggle('dim',x!==d)});
+    hubBig.textContent='';hubSm.textContent=`${d.name} · cited in ${d.cs.length} clause${d.cs.length===1?'':'s'}`;return}
+  const act=S.hover||S.pin, hl=S.ht.size||S.hc.size;
+  DOCS.forEach(x=>{const inn=!!act&&x.cs.includes(act);x.g.classList.remove('sel');x.g.classList.toggle('on',inn);x.g.classList.toggle('dim',!!act&&!inn)});
+  const fe=S.focus!=null&&!S.hover?E[S.focus]:null;
+  const nb=new Map();
+  if(act)byId[act].pairs.forEach(p=>nb.set(other(p,act),p.links.length));
+  N.forEach(n=>{
+    const c=n.g.classList;
+    c.toggle('sel',n.id===act);
+    c.toggle('nb',!!act&&nb.has(n.id)&&!(fe&&n.id!==fe.a&&n.id!==fe.b));
+    c.toggle('dim',act?(n.id!==act&&(!nb.has(n.id)||(!!fe&&n.id!==fe.a&&n.id!==fe.b))):(hl?!nodeHl(n):false));
+    c.toggle('hl',!act&&!!hl&&nodeHl(n)&&S.hc.has(n.cat));
+    const show=!!act&&nb.has(n.id)&&!fe;n.badge.setAttribute('visibility',show?'visible':'hidden');if(show)n.bt.textContent=nb.get(n.id);
+  });
+  gHot.textContent='';
+  pairs.forEach(p=>{
+    let on=false,off=false;
+    if(fe){on=p.k===[fe.a,fe.b].sort().join('|');off=!on}
+    else if(act){on=p.a===act||p.b===act;off=!on}
+    else if(hl){on=pairHl(p);off=!on}
+    if(S.hp===p){on=true;off=false}
+    p.el.classList.toggle('on',on);p.el.classList.toggle('off',off);
+    if(S.hp===p)el('path',{class:'hot',d:p.d,stroke:`var(--t-${p.type})`,'stroke-width':p.w+3},gHot);
+  });
+  const n=act&&byId[act];
+  hubBig.textContent=n?n.id:(hl?'':'');
+  hubSm.textContent=n?`${n.count} link${n.count===1?'':'s'} · ${nb.size} clause${nb.size===1?'':'s'}`:'';
+}
+const nodeHl=n=>(S.hc.size?S.hc.has(n.cat):true)&&(S.ht.size?n.pairs.some(p=>[...p.types].some(t=>S.ht.has(t))):true);
+const pairHl=p=>(S.ht.size?[...p.types].some(t=>S.ht.has(t)):true)&&(S.hc.size?(S.hc.has(byId[p.a].cat)||S.hc.has(byId[p.b].cat)):true);
+function pin(id,focus=null,opts={}){S.pin=id;S.focus=focus;S.hover=null;S.doc=null;render(opts);refresh();
+  if(id&&!opts.quiet){if(focus!=null)Sound.edge(E[focus]);else Sound.clause(id);if(id===TOP.id&&focus==null)celebrate()}}
+function pinDoc(i){S.pin=null;S.focus=null;S.hover=null;S.doc=i;render();refresh();if(i!=null)Sound.group(DOCS[i].cs)}
+
+/* ---------- tooltip ---------- */
+const tip=$('#tip');
+function showTip(ev,p){tip.hidden=false;tip.innerHTML=`<b>${p.a} ↔ ${p.b}</b>`+p.links.map(l=>`<small>${esc(TN[l.type])}: ${esc(l.label)}</small>`).join('');const r=tip.parentElement.getBoundingClientRect();let x=ev.clientX-r.left+12,y=ev.clientY-r.top+12;x=Math.min(x,r.width-tip.offsetWidth-6);tip.style.left=Math.max(4,x)+'px';tip.style.top=y+'px'}
+function hideTip(){tip.hidden=true}
+
+/* ---------- panel ---------- */
+const panel=$('#panel');
+const refBtns=s=>esc(s).replace(/\[([AB]\.[IVX]+)\]/g,(m,id)=>`<button class="ref" data-go="${id}">${id}</button>`);
+const BASIS={express:'Express reference: the text names the other clause.',term:'Shared term: one clause uses a term the other defines.',match:'Matching wording in Part A and Part B.',read:'Read together: same subject, no express reference.',inference:'Inference: the link depends on reading general words as covering the other clause.'};
+function renderDoc(){
+  const d=DOCS[S.doc];
+  panel.innerHTML=`<div class="eyebrow">Outside document<button class="unpin" data-go="">Close ×</button></div>
+  <div class="ph"><h2>${esc(d.name)}</h2></div><p class="summary">${esc(d.how)}</p>
+  <p class="note">Not part of the General Conditions. Shown because the text relies on it. The wheel does not reproduce or summarise its contents.</p>
+  <h3>Cited in ${d.cs.length} clause${d.cs.length===1?'':'s'} (${d.refs.length} reference${d.refs.length===1?'':'s'})</h3>
+  <div class="docq">${d.refs.map(r=>`<div class="q"><h4><button data-go="${r.c}">${r.c}</button> · ${esc(r.a)} · ${esc(byId[r.c].title)}</h4><p>“${esc(r.q)}”</p></div>`).join('')}</div>`;
+}
+function render(opts={}){
+  if(S.doc!=null&&!S.pin){renderDoc();return}
+  if(!S.pin){renderHome();return}
+  const n=byId[S.pin];
+  const defd=DATA.terms.filter(t=>t.def_===n.id).map(t=>t.term), used=DATA.terms.filter(t=>t.used.includes(n.id)).map(t=>`${t.term} (${t.def_})`);
+  const docs=DOCS.filter(d=>d.cs.includes(n.id));
+  const groups=n.pairs.slice().sort((p,q)=>N.indexOf(byId[other(p,n.id)])-N.indexOf(byId[other(q,n.id)]));
+  let h=`<div class="eyebrow" style="--c:var(--c-${n.cat})"><i></i>${esc(CN[n.cat])} · Part ${n.id[0]}<button class="unpin" data-go="">Unpin ×</button></div>
+  <div class="ph"><span class="n">${n.id}</span><h2>${esc(n.title)}</h2></div>
+  <p class="summary">${esc(n.summary)}</p>
+  <div class="sigbox"><h3>What the links say about this clause</h3><p class="sig">${refBtns(n.sig)}</p></div>`;
+  if(defd.length||used.length)h+=`<p class="meta">${defd.length?`<b>Defines:</b> ${esc(defd.join(', '))}. `:''}${used.length?`<b>Uses:</b> ${esc(used.join(', '))}.`:''}</p>`;
+  if(docs.length)h+=`<details id="odocs" open><summary>Outside documents (${docs.length})</summary><div class="in docq">${docs.map(d=>d.refs.filter(r=>r.c===n.id).map(r=>`<div class="q"><h4><button data-doc="${d.i}">${esc(d.name)}</button> · ${esc(r.a)}</h4><p>“${esc(r.q)}”</p></div>`).join('')).join('')}</div></details>`;
+  h+=`<details id="subs"${opts.openSubs?' open':''}><summary>Paragraph map (${n.subs.length})</summary><div class="in"><ul class="subs">${n.subs.map(s=>`<li data-sub="${esc(s.lab)}"><span class="l">${s.lab==='-'?'':esc(s.lab)}</span><span>${hi(esc(s.t),opts.q)}</span></li>`).join('')}</ul><p class="note" style="margin-top:8px">Paraphrase. See the source PDF for the wording.</p></div></details>`;
+  h+=`<h3>Links (${n.count})</h3>`;
+  if(S.focus!=null)h+=`<button class="all" data-go="${n.id}">← click here to highlight all links</button>`;
+  groups.forEach(p=>{
+    const o=byId[other(p,n.id)];
+    h+=`<div class="group"><button class="gh" data-go="${o.id}"><span class="pn">${o.id}</span><span class="pt">${esc(o.title)}</span><span class="cnt">${p.links.length} link${p.links.length>1?'s':''}</span></button>`;
+    p.links.forEach(l=>{
+      const open=S.focus===l.i, mine=l.a===n.id, qa=mine?l.qa:l.qb, qb=mine?l.qb:l.qa, aa=mine?l.aa:l.ab, ab=mine?l.ab:l.aa;
+      const dir=l.from?`Direction: ${l.from} → ${l.from===l.a?l.b:l.a}`:'Direction: both ways';
+      h+=`<div class="lk" style="--c:var(--t-${l.type})"><button data-link="${l.i}" aria-expanded="${open}"><span class="chip">${esc(TN[l.type])}</span><span class="lab">${esc(l.label)}</span><span class="anc">${esc(aa)} ↔ ${esc(ab)}</span></button>`;
+      if(open)h+=`<div class="body"><p>${esc(l.detail)}</p><p class="dir">${dir}</p><p class="basis"><b>Basis.</b> ${BASIS[l.basis]}</p><div class="quotes"><div class="q"><h4>${n.id} · ${esc(aa)}</h4><p>“${hi(esc(qa),opts.q)}”</p></div><div class="q"><h4>${o.id} · ${esc(ab)}</h4><p>“${hi(esc(qb),opts.q)}”</p></div></div></div>`;
+      h+=`</div>`;
+    });
+    h+=`</div>`;
+  });
+  panel.innerHTML=h;
+  if(opts.scrollSub){const li=panel.querySelector(`[data-sub="${opts.scrollSub}"]`);if(li)li.scrollIntoView({block:'center'})}
+}
+const hi=(s,q)=>{if(!q||q.length<3)return s;const i=s.toLowerCase().indexOf(q.toLowerCase());return i<0?s:s.slice(0,i)+'<mark>'+s.slice(i,i+q.length)+'</mark>'+s.slice(i+q.length)};
+function renderHome(){
+  const top=N.slice().sort((a,b)=>b.count-a.count).slice(0,6);
+  panel.innerHTML=`<div class="eyebrow">How to read this</div>
+  <div class="intro"><p>Each segment is one article of the Pon Power General Conditions. Part A (16 articles) covers the sale and delivery of products. Part B (8 articles) covers repairs, revision and other services. Lines through the middle are links between articles, coloured by type. An arrow runs from the article that supplies the rule, definition or date to the article that relies on it.</p>
+  <p style="margin-top:8px">Hover a segment to see its links. Click to pin it and read each link with a quote from both ends. Use the chips under the wheel to highlight a link type or category.</p></div>
+  <div class="stats"><div class="stat"><div class="v">${N.length}</div><div class="k">articles</div></div><div class="stat"><div class="v">${E.length}</div><div class="k">links</div></div><div class="stat"><div class="v">${pairs.length}</div><div class="k">connected pairs</div></div><div class="stat"><div class="v">${DOCS.length}</div><div class="k">outside documents</div></div><div class="stat"><div class="v">${DATA.nq}</div><div class="k">verified quotes</div></div></div>
+  <div><h3>Most connected</h3><div class="top">${top.map(n=>`<button class="pill" data-go="${n.id}"><b>${n.id}</b> ${esc(n.short)} · ${n.count}</button>`).join('')}</div></div>
+  <div class="sigbox"><h3>Reading notes</h3><p class="sig">Party names follow the document: Pon Power and Principal. The text also uses "we", "us" and "our" for Pon Power. Where a link rests on reading two clauses together and not on an express reference, its card says so under Basis. The dotted spokes outside the ring are documents the text relies on but does not contain. The only express reference from Part B to Part A is in B.V paragraph 2.</p></div>`;
+}
+panel.addEventListener('click',ev=>{
+  const dc=ev.target.closest('[data-doc]');if(dc){pinDoc(+dc.dataset.doc);return}
+  const g=ev.target.closest('[data-go]');if(g){pin(g.dataset.go||null);return}
+  const l=ev.target.closest('[data-link]');if(l){const i=+l.dataset.link;pin(S.pin,S.focus===i?null:i)}
+});
+
+/* ---------- legend ---------- */
+function legend(){
+  const mk=(host,title,items,set,cls,varp,count)=>{host.innerHTML=`<span class="lt">${title}</span>`+items.map(it=>`<button class="lg" data-k="${it[0]}" aria-pressed="false" style="--c:var(--${varp}-${it[0]})"><i class="${cls}"></i>${esc(it[1])} <b>${count(it[0])}</b></button>`).join('')+`<button class="clear" hidden>Clear highlights</button>`;
+    host.addEventListener('click',ev=>{const b=ev.target.closest('.lg');if(b){const k=b.dataset.k;set.has(k)?set.delete(k):set.add(k);b.setAttribute('aria-pressed',set.has(k))}else if(ev.target.closest('.clear')){S.ht.clear();S.hc.clear();document.querySelectorAll('.lg').forEach(x=>x.setAttribute('aria-pressed','false'))}else return;
+      document.querySelectorAll('.clear').forEach(c=>c.hidden=!(S.ht.size||S.hc.size));refresh()})};
+  mk($('#lg-types'),'Link types (click to highlight)',TYPES,S.ht,'ln','t',k=>E.filter(e=>e.type===k).length);
+  mk($('#lg-cats'),'Categories',CATS,S.hc,'sq','c',k=>N.filter(n=>n.cat===k).length);
+}
+
+/* ---------- glossary + clause map ---------- */
+function lower(){
+  $('#gl-types').insertAdjacentHTML('beforeend',TYPES.map(t=>`<div><dt style="--c:var(--t-${t[0]})"><i class="ln"></i>${esc(t[1])}</dt><dd>${esc(t[2])}<span class="eg">Example: ${esc(t[3])}</span></dd></div>`).join(''));
+  $('#gl-cats').insertAdjacentHTML('beforeend',CATS.map(c=>`<div><dt style="--c:var(--c-${c[0]})"><i class="sq"></i>${esc(c[1])}</dt><dd>${esc(c[2])}<span class="eg">${N.filter(n=>n.cat===c[0]).map(n=>n.id).join(', ')}</span></dd></div>`).join(''));
+  const go=id=>`<button class="ref" data-go="${id}">${id}</button>`;
+  $('#gl-terms').innerHTML=`<table class="tbl"><tr><th>Term</th><th>Defined in</th><th>Meaning</th><th>Used in</th></tr>${DATA.terms.map(t=>`<tr><td><b>${esc(t.term)}</b></td><td>${go(t.def_)}</td><td>${esc(t.meaning)}</td><td>${t.used.length?t.used.map(go).join(' '):'Not used elsewhere by name'}</td></tr>`).join('')}</table>
+  <p class="note" style="margin-top:8px">Pon Power and Principal are defined in A.I.2 and B.I.2 and used throughout. Used but not defined: "Agreement" (capitalised in A.XV and B.VII only), "Attachment", "INCOTERMS", "EXW", "DDP", "VCA", "coherent agreement".</p>`;
+  $('#gl-docs').innerHTML=`<table class="tbl"><tr><th>Document</th><th>Role</th><th>Cited in</th></tr>${DOCS.map(d=>`<tr><td><button class="ref" data-doc="${d.i}">${esc(d.name)}</button></td><td>${esc(d.how)}</td><td>${d.refs.map(r=>`${go(r.c)} <span class="note">${esc(r.a)} · “${esc(r.q)}”</span>`).join('<br>')}</td></tr>`).join('')}</table>
+  <p class="note" style="margin-top:8px">The conditions are also stated to be deposited with the Chamber of Commerce at Rotterdam (document header, not an article).</p>
+  <h3 style="margin-top:18px">Basis of a link</h3><dl>${Object.entries(BASIS).map(([k,v])=>`<div><dt>${v.split(':')[0]} <span class="note">(${E.filter(e=>e.basis===k).length})</span></dt><dd>${esc(v.split(': ')[1])}</dd></div>`).join('')}</dl>`;
+  $('#cm').innerHTML=N.map(n=>`<div class="b"><h4><button data-go="${n.id}">${n.id} · ${esc(n.title)}</button></h4><ul class="subs">${n.subs.map(s=>`<li><span class="l">${s.lab==='-'?'':esc(s.lab)}</span><span>${esc(s.t)}</span></li>`).join('')}</ul></div>`).join('');
+  document.querySelectorAll('#glossary,#map').forEach(d=>d.addEventListener('click',ev=>{const dc=ev.target.closest('[data-doc]'),g=ev.target.closest('[data-go]');if(dc)pinDoc(+dc.dataset.doc);else if(g)pin(g.dataset.go);if(dc||g)$('#panel').scrollIntoView({behavior:'smooth',block:'start'})}));
+}
+
+/* ---------- search ---------- */
+const SIDX=[];
+N.forEach(n=>{SIDX.push({g:'Clauses',l:`${n.id} · ${n.title}`,s:n.summary,k:`${n.id} ${n.id.replace('.',' ')} ${n.title} ${n.short}`,go:()=>pin(n.id)});
+  n.subs.forEach(s=>{if(s.lab!=='-')SIDX.push({g:'Paragraphs',l:`${n.id}.${s.lab}`,s:s.t,k:`${n.id}.${s.lab} ${s.t}`,go:q=>pin(n.id,null,{openSubs:true,scrollSub:s.lab,q})})})});
+DATA.terms.forEach(t=>SIDX.push({g:'Defined terms',l:t.term,s:`Defined in ${t.def_}. ${t.meaning}`,k:t.term+' '+t.meaning,go:()=>pin(t.def_)}));
+DOCS.forEach(d=>SIDX.push({g:'Outside documents',l:d.name,s:d.how+' Cited in '+d.cs.join(', '),k:d.name+' '+d.short+' '+d.how+' '+d.refs.map(r=>r.q).join(' '),go:()=>pinDoc(d.i)}));
+E.forEach(e=>{SIDX.push({g:'Links',l:`${e.a} ↔ ${e.b} · ${e.label}`,s:TN[e.type]+'. '+e.detail,k:`${e.label} ${e.detail} ${TN[e.type]}`,go:()=>pin(e.a,e.i)});
+  SIDX.push({g:'Quoted text',l:`${e.a} · ${e.aa}`,s:e.qa,k:e.qa,go:q=>pin(e.a,e.i,{q})});SIDX.push({g:'Quoted text',l:`${e.b} · ${e.ab}`,s:e.qb,k:e.qb,go:q=>pin(e.b,e.i,{q})})});
+const qi=$('#q'),dd=$('#dd');let res=[],sel=0;
+function search(){
+  const q=qi.value.trim().toLowerCase();if(!q){dd.hidden=true;return}
+  const seen=new Set(),by={};res=[];
+  SIDX.forEach(it=>{if(!it.k.toLowerCase().includes(q))return;const key=it.g+it.l+it.s;if(seen.has(key))return;seen.add(key);(by[it.g]=by[it.g]||[]).push(it)});
+  let h='';['Clauses','Paragraphs','Defined terms','Outside documents','Links','Quoted text'].forEach(g=>{if(!by[g])return;h+=`<h5>${g}</h5>`;by[g].slice(0,5).forEach(it=>{h+=`<button data-i="${res.length}"><span>${hi(esc(it.l),q)}</span><small>${hi(esc(it.s),q)}</small></button>`;res.push(it)})});
+  dd.innerHTML=h||'<div class="none">No matches</div>';dd.hidden=false;sel=0;mark();
+}
+const mark=()=>dd.querySelectorAll('button').forEach((b,i)=>{b.classList.toggle('act',i===sel);if(i===sel)b.scrollIntoView({block:'nearest'})});
+function choose(i){const it=res[i];if(!it)return;const q=qi.value.trim();dd.hidden=true;qi.blur();it.go(q);if(matchMedia('(max-width:920px)').matches)$('#panel').scrollIntoView({behavior:'smooth'})}
+qi.addEventListener('input',()=>{search();egg(qi.value)});qi.addEventListener('focus',search);
+qi.addEventListener('keydown',ev=>{if(ev.key==='ArrowDown'){ev.preventDefault();sel=Math.min(res.length-1,sel+1);mark()}else if(ev.key==='ArrowUp'){ev.preventDefault();sel=Math.max(0,sel-1);mark()}else if(ev.key==='Enter'){ev.preventDefault();const q=qi.value;choose(sel);egg(q,true)}else if(ev.key==='Escape'){dd.hidden=true;qi.blur()}});
+dd.addEventListener('mousedown',ev=>{const b=ev.target.closest('button');if(b){ev.preventDefault();choose(+b.dataset.i)}});
+document.addEventListener('click',ev=>{if(!ev.target.closest('.search'))dd.hidden=true});
+document.addEventListener('keydown',ev=>{if(ev.key==='/'&&document.activeElement!==qi&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName)){ev.preventDefault();qi.focus()}else if(ev.key==='Escape'&&document.activeElement!==qi&&(S.pin||S.doc!=null)){pin(null)}});
+
+/* ---------- theme ---------- */
+function setTheme(t,save){if(t==='auto')document.documentElement.removeAttribute('data-theme');else document.documentElement.setAttribute('data-theme',t);document.querySelectorAll('#theme button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.t===t));if(save)try{localStorage.setItem('pon-wheel-theme',t)}catch(e){}}
+$('#theme').addEventListener('click',ev=>{const b=ev.target.closest('button');if(b)setTheme(b.dataset.t,true)});
+try{const t=localStorage.getItem('pon-wheel-theme');if(t)setTheme(t,false)}catch(e){}
+
+/* ---------- outside documents on the ring ---------- */
+(function(){
+  DOCS.forEach(d=>{let x=0,y=0;d.cs.forEach(c=>{const t=byId[c].mid*Math.PI/180;x+=Math.sin(t);y+=Math.cos(t)});d.ang=(Math.atan2(x,y)*180/Math.PI+360)%360});
+  const ord=DOCS.slice().sort((a,b)=>a.ang-b.ang),MIN=Math.min(24,360/DOCS.length*.82);
+  for(let it=0;it<600;it++)for(let i=0;i<ord.length;i++){const j=(i+1)%ord.length,a=ord[i],b=ord[j],gap=b.ang-a.ang+(j===0?360:0);if(gap<MIN){const push=(MIN-gap)/2;a.ang-=push;b.ang+=push}}
+  DOCS.forEach(d=>d.ang=(d.ang%360+360)%360);
+  DOCS.forEach(d=>{
+    const g=el('g',{class:'doc',tabindex:0,role:'button','aria-label':`Outside document: ${d.name}, cited in ${d.cs.join(', ')}`},gDocs);d.g=g;
+    d.cs.forEach(c=>{const n=byId[c],[x0,y0]=pt(486,n.mid),[x1,y1]=pt(556,d.ang);let m=(n.mid+d.ang)/2;if(Math.abs(n.mid-d.ang)>180)m+=180;const [cx,cy]=pt(545,m);el('path',{d:`M${f(x0)} ${f(y0)}Q${f(cx)} ${f(cy)} ${f(x1)} ${f(y1)}`},g)});
+    const [dx,dy]=pt(560,d.ang);el('circle',{cx:f(dx),cy:f(dy),r:7.5},g);
+    const a=d.ang,side=(a>12&&a<168)?'start':(a>192&&a<348)?'end':'middle',up0=a<90||a>270,tx=side==='start'?dx+13:side==='end'?dx-13:dx,ty=side==='middle'?dy+(up0?-22:22):dy;
+    const words=d.short.split(' '),lines=[];words.forEach(w=>{const L=lines.length-1;if(L>=0&&(lines[L]+' '+w).length<=13)lines[L]+=' '+w;else lines.push(w)});
+    const up=a<90||a>270,t=el('text',{x:f(tx),y:f(ty-(side==='middle'?(up?(lines.length-1)*19:0):(lines.length-1)*9.5)),'text-anchor':side},g);
+    lines.forEach((ln,i)=>el('tspan',{x:f(tx),dy:i?19:0},t).textContent=ln);
+    g.addEventListener('mouseenter',()=>{S.hdoc=d.i;refresh()});g.addEventListener('mouseleave',()=>{S.hdoc=null;refresh()});
+    g.addEventListener('click',()=>S.doc===d.i&&!S.pin?pin(null):pinDoc(d.i));
+    g.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();pinDoc(d.i)}});
+  });
+})();
+function fitView(){const on=$('#docsbtn').getAttribute('aria-pressed')==='true';gDocs.style.display=on?'':'none';const b=rot.getBBox(),p=10;svg.setAttribute('viewBox',`${f(b.x-p)} ${f(b.y-p)} ${f(b.width+2*p)} ${f(b.height+2*p)}`)}
+$('#docsbtn').addEventListener('click',ev=>{const b=ev.currentTarget,on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);if(!on&&S.doc!=null)pin(null);fitView()});
+
+/* ---------- sound, motion, easter eggs ---------- */
+const FX={sound:false,mode:'melody',pres:false,ctx:null,out:null,busy:0,partied:false,last:''};
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const TOP=N.slice().sort((a,b)=>b.count-a.count)[0];
+function ac(){if(!FX.ctx){const A=window.AudioContext||window.webkitAudioContext;if(!A)return null;const c=FX.ctx=new A();
+    const comp=c.createDynamicsCompressor();comp.connect(c.destination);
+    FX.out=c.createGain();FX.out.gain.value=.55;FX.out.connect(comp);
+    /* small room: filtered feedback delay (same chain as the ADI wheel) */
+    const dl=c.createDelay(1),fb=c.createGain(),lp=c.createBiquadFilter(),wet=c.createGain();dl.delayTime.value=.19;fb.gain.value=.28;lp.type='lowpass';lp.frequency.value=1800;wet.gain.value=.22;
+    FX.out.connect(dl);dl.connect(lp);lp.connect(fb);fb.connect(dl);lp.connect(wet);wet.connect(comp);
+    FX.egg=c.createGain();FX.egg.gain.value=.16;FX.egg.connect(comp)}
+  if(FX.ctx.state==='suspended')FX.ctx.resume();return FX.ctx}
+function tone(hz,at,dur=.45,type='triangle',vol=1,to){const c=ac();if(!c)return;const o=c.createOscillator(),g=c.createGain();o.type=type;o.frequency.setValueAtTime(hz,at);if(to)o.frequency.exponentialRampToValueAtTime(to,at+dur);g.gain.setValueAtTime(.0001,at);g.gain.linearRampToValueAtTime(vol,at+.02);g.gain.exponentialRampToValueAtTime(.0001,at+dur);o.connect(g);g.connect(FX.egg);o.start(at);o.stop(at+dur+.05)}
+/* ---------- clause sound: ported from the ADI wheel ----------
+   Pitch: each clause sits on a pentatonic walk of the circle of fifths (C G D A E), rising an octave every 5 segments, wrapping every 15.
+   Timbre: set by the link type. */
+const FIFTHS_PENTA=[0,7,2,9,4], IDX=Object.fromEntries(N.map((n,i)=>[n.id,i]));
+const midiOf=id=>{const i=IDX[id];return 55+FIFTHS_PENTA[i%5]+12*Math.floor((i%15)/5)};
+const hzOf=m=>440*Math.pow(2,(m-69)/12);
+const VOICE={
+  cond:{osc:'sine',a:.015,d:1.1,g:.22},
+  def:{osc:'triangle',a:.01,d:.8,g:.16},
+  cancel:{osc:'triangle',a:.002,d:.32,g:.22,lp:[3200,500]},
+  prec:{osc:'sine',a:.02,d:1.3,g:.18,fifth:true},
+  carve:{osc:'square',a:.002,d:.16,g:.08,lp:[1100,700]},
+  time:{osc:'sine',a:.005,d:.7,g:.18,det:7},
+  par:{osc:'triangle',a:.012,d:.9,g:.15,det:5},
+  xref:{osc:'sine',a:.01,d:.6,g:.13},
+  root:{osc:'triangle',a:.01,d:1.8,g:.2,lp:[2400,900]}
+};
+const partner=(e,id)=>e.a===id?e.b:e.a;
+function flashW(id,color){const g=byId[id].g;if(color)g.style.setProperty('--ping',color);else g.style.removeProperty('--ping');g.classList.remove('ping');void g.getBBox();g.classList.add('ping')}
+const Sound=(()=>{
+  let voices=[],timers=[],touring=false,ctx=null;
+  const ready=()=>{if(!FX.sound||FX.pres)return false;ctx=ac();return !!ctx};
+  function vnote(m,type,when,scale=1){
+    const v=VOICE[type]||VOICE.xref,t0=ctx.currentTime+when;
+    if(window.LOG)window.LOG.push([+when.toFixed(3),m,type]);
+    const g=ctx.createGain();g.gain.setValueAtTime(0,t0);g.gain.linearRampToValueAtTime(v.g*scale,t0+v.a);g.gain.exponentialRampToValueAtTime(.0001,t0+v.a+v.d);
+    let dest=g;
+    if(v.lp){const fl=ctx.createBiquadFilter();fl.type='lowpass';fl.frequency.setValueAtTime(v.lp[0],t0);fl.frequency.exponentialRampToValueAtTime(v.lp[1],t0+v.a+v.d);fl.connect(g);dest=fl}
+    g.connect(FX.out);
+    const freqs=[hzOf(m)];if(v.fifth)freqs.push(hzOf(m+7));
+    freqs.forEach((fq,k)=>{const o=ctx.createOscillator();o.type=v.osc;o.frequency.value=fq;if(v.det)o.detune.value=k?0:v.det;let node=o;if(k){const q=ctx.createGain();q.gain.value=.45;o.connect(q);node=q}node.connect(dest);o.start(t0);o.stop(t0+v.a+v.d+.05);voices.push(o)});
+    if(v.det){const o=ctx.createOscillator();o.type=v.osc;o.frequency.value=hzOf(m);o.detune.value=-v.det;o.connect(dest);o.start(t0);o.stop(t0+v.a+v.d+.05);voices.push(o)}
+    FX.busy=Math.max(FX.busy,t0+Math.min(v.d,.5));
+  }
+  function stop(){voices.forEach(o=>{try{o.stop()}catch(_){}});voices=[];timers.forEach(clearTimeout);timers=[];if(ctx)FX.busy=ctx.currentTime;if(touring)endTour()}
+  function flash(id,ms,type){timers.push(setTimeout(()=>flashW(id,type?`var(--t-${type})`:null),ms))}
+  /* links of a clause, ordered clockwise round the wheel starting from it */
+  function incident(id){const i0=IDX[id];return E.filter(e=>e.a===id||e.b===id).sort((x,y)=>((IDX[partner(x,id)]-i0+N.length)%N.length)-((IDX[partner(y,id)]-i0+N.length)%N.length))}
+  function strum(id,when,gain=1){const inc=incident(id),sc=1/Math.sqrt(inc.length+1);vnote(midiOf(id),'root',when,Math.max(sc*1.4,.35)*gain);inc.forEach((e,k)=>vnote(midiOf(partner(e,id)),e.type,when+k*.012,sc*1.3*gain));return inc}
+  function clause(id){
+    if(!ready())return;stop();
+    if(FX.mode==='chord'){ /* one strummed chord: root + every linked clause, scaled so dense clauses don't clip */
+      const inc=strum(id,0);flash(id,0);inc.forEach(e=>flash(partner(e,id),0,e.type));
+    }else{ /* root, then one note per link in turn; the link type sets the voice */
+      vnote(midiOf(id),'root',0);flash(id,0);
+      incident(id).slice(0,18).forEach((e,k)=>{const p=partner(e,id),w=.16+k*.095;vnote(midiOf(p),e.type,w);flash(p,w*1000,e.type)});
+    }
+  }
+  function edge(e){if(!ready())return;stop();const gap=FX.mode==='chord'?0:.22;vnote(midiOf(e.a),e.type,0);vnote(midiOf(e.b),e.type,gap);flash(e.a,0,e.type);flash(e.b,gap*1000,e.type)}
+  function group(ids){if(!ready()||!ids.length)return;stop();ids.forEach((id,k)=>{const w=FX.mode==='chord'?k*.012:k*.16;vnote(midiOf(id),'xref',w,ids.length>3?.8:1);flash(id,w*1000,'xref')})}
+  function hello(){if(!ready())return;[0,1,2,3,4].forEach(k=>vnote(55+FIFTHS_PENTA[k]+12,'xref',k*.08))}
+
+  /* ---- tune: a random walk along real links, about 8 seconds ---- */
+  const tuneBtn=$('#tune'),gTrail=el('g',{});rot.insertBefore(gTrail,gHot);
+  const pick=a=>a[Math.floor(Math.random()*a.length)];
+  const at=(sec,fn)=>timers.push(setTimeout(fn,sec*1000));
+  function trail(e){const p=pairBy[[e.a,e.b].sort().join('|')],t=el('path',{class:'trail',d:p.d,stroke:`var(--t-${e.type})`},gTrail);setTimeout(()=>t.remove(),1600)}
+  function hubShow(id,sub){hubBig.textContent=id;hubSm.textContent=sub||byId[id].short}
+  function endTour(){touring=false;svg.classList.remove('touring');tuneBtn.setAttribute('aria-pressed','false');tuneBtn.textContent='▶ Play tune';N.forEach(n=>n.g.classList.remove('ping'));refresh()}
+  function tune(){
+    if(touring){stop();return}
+    if(FX.pres)return;
+    if(!FX.sound)setSound(true);
+    ctx=ac();if(!ctx)return;stop();wake();
+    const inc=id=>E.filter(e=>e.a===id||e.b===id),chord=FX.mode==='chord';
+    touring=true;svg.classList.add('touring');tuneBtn.setAttribute('aria-pressed','true');tuneBtn.textContent='■ Stop';
+    S.hover=null;S.hp=null;hideTip();refresh();
+    /* Sequence: single notes, tempo and rhythm vary each play. Chord: a full strummed chord of each clause on the path, on a steady slower beat. */
+    const beat=chord?.5:.16+Math.random()*.09;
+    const rhythm=chord?[1]:pick([[1,1,2],[1,.5,.5,1,1],[2,1,1],[.5,.5,1,.5,.5,1,2],[1,1,1,1]]);
+    const accentEvery=pick([4,6,8]);
+    const live=N.filter(n=>n.pairs.length>=2).map(n=>n.id);
+    let cur=pick(live),prev=null,t=0,k=0;const start=cur;
+    at(0,()=>{if(chord)strum(cur,0,.9);else vnote(midiOf(cur)-12,'root',0,.9);flash(cur,0);hubShow(cur,'Now playing')});
+    t=chord?beat:beat*2;
+    while(t<7.2){
+      let opts=inc(cur).filter(e=>e!==prev&&byId[partner(e,cur)].pairs.length>=2);if(!opts.length)opts=inc(cur);
+      let e,nxt;
+      if(!opts.length||Math.random()<.06){nxt=pick(live);e=null}else{e=pick(opts);nxt=partner(e,cur)}
+      const step=k,type=e?e.type:'xref',edg=e,to=nxt;
+      at(t,()=>{
+        if(chord)strum(to,0,.85);else vnote(midiOf(to),type,0);
+        if(!chord&&step%accentEvery===0)vnote(midiOf(to)-12,'root',0,.55);
+        if(edg)trail(edg);
+        flash(to,0,edg?edg.type:null);hubShow(to,edg?TN[edg.type]:byId[to].short);
+      });
+      t+=beat*rhythm[k%rhythm.length];prev=e;cur=nxt;k++;
+    }
+    /* cadence: land back on the opening clause with a fifth */
+    at(t,()=>{vnote(midiOf(start)-12,'root',0,.9);vnote(midiOf(start),'prec',0,.9);vnote(midiOf(start)+12,'cond',.02,.5);flash(start,0);hubShow(start,'Fin')});
+    at(t+1.4,()=>endTour());
+  }
+  tuneBtn.addEventListener('click',tune);
+  return {clause,edge,group,hello,stop,tune,one:(id)=>{if(!ready())return false;vnote(midiOf(id),'root',0,.9);return true},touring:()=>touring};
+})();
+function setSound(on){FX.sound=on;const b=$('#snd');b.setAttribute('aria-pressed',on);b.textContent=on?'Sound on':'Sound off';if(!on)Sound.stop()}
+/* easter-egg sounds wait until the clause's own notes have finished */
+function after(fn){const c=FX.ctx,w=c?Math.max(0,FX.busy-c.currentTime):0;setTimeout(fn,w*1000+30)}
+function eggSound(fn){if(!FX.sound||FX.pres)return;after(()=>{const c=ac();if(c)fn(c.currentTime+.02)})}
+const toastEl=$('#toast');let toastT;
+function toast(html,ms=5200){toastEl.innerHTML=html;toastEl.hidden=false;clearTimeout(toastT);toastT=setTimeout(()=>toastEl.hidden=true,ms)}
+function shake(){if(reduce)return;svg.classList.remove('shake');void svg.getBBox();svg.classList.add('shake');setTimeout(()=>svg.classList.remove('shake'),800)}
+function confetti(){if(reduce)return;const cv=$('#fx'),r=cv.getBoundingClientRect(),dpr=window.devicePixelRatio||1;cv.width=r.width*dpr;cv.height=r.height*dpr;const g=cv.getContext('2d');g.scale(dpr,dpr);
+  const cols=['#ffcd11','#111111','#ffffff','#ffcd11','#8a8a85'],ps=Array.from({length:130},()=>({x:r.width/2,y:r.height*.42,vx:(Math.random()-.5)*11,vy:-Math.random()*9-3,s:4+Math.random()*6,c:cols[Math.floor(Math.random()*cols.length)],a:Math.random()*6,va:(Math.random()-.5)*.4}));
+  const t0=performance.now();(function fr(t){const k=(t-t0)/2400;g.clearRect(0,0,r.width,r.height);if(k>=1)return;ps.forEach(p=>{p.vy+=.28;p.x+=p.vx;p.y+=p.vy;p.a+=p.va;g.save();g.globalAlpha=1-k;g.translate(p.x,p.y);g.rotate(p.a);g.fillStyle=p.c;g.fillRect(-p.s/2,-p.s/3,p.s,p.s*.66);g.restore()});requestAnimationFrame(fr)})(t0)}
+function celebrate(){if(FX.pres||FX.partied)return;FX.partied=true;confetti();toast(`<b>${TOP.id}</b> is the most connected clause: ${TOP.count} links to ${TOP.pairs.length} clauses.`);eggSound(t=>[523.25,659.25,783.99,1046.5].forEach((h,i)=>tone(h,t+i*.1,.5,'triangle',.8)))}
+const EGGS=[
+ [/^force majeure$/,()=>{shake();toast('Force majeure: “performance is prevented or made unreasonably difficult”. Wheel included.');eggSound(t=>{tone(70,t,.9,'sawtooth',.9,38);tone(52,t+.05,.9,'square',.4,30)});after(()=>pin('A.XII',null,{quiet:true}))}],
+ [/^cash$/,()=>{toast('B.III.1: “Prices given by Pon Power are always based on cash payment”.<br>B.III.3: “We do not accept payment in cash”.',7000);eggSound(t=>{tone(1318.5,t,.12,'square',.5);tone(1760,t+.09,.5,'square',.5)});after(()=>pin('B.III',null,{quiet:true}))}],
+ [/^fatal$/,()=>{toast('A.IX.2: “Payment terms will be seen as a fatal terms.”');eggSound(t=>[196,185,146.8].forEach((h,i)=>tone(h,t+i*.32,i===2?1.4:.34,'sawtooth',.7)));after(()=>pin('A.IX',null,{quiet:true}))}],
+ [/^(diesel|engine|generator|genset)$/,()=>{toast('Starting engine. Stand clear of the flywheel.');eggSound(t=>{for(let i=0;i<5;i++)tone(60,t+i*.13,.1,'square',.6);tone(45,t+.7,2.6,'sawtooth',.8,120)});after(()=>spin(true))},true],
+ [/^dordrecht$/,()=>{toast('All disputes “will be submitted to the district court at Dordrecht”. Both parts agree.');['A.XIV','B.VI'].forEach((id,i)=>setTimeout(()=>flashW(id,'var(--c-disp)'),i*350));eggSound(t=>[659.3,523.3,587.3,392,392,587.3,659.3,523.3].forEach((h,i)=>tone(h,t+i*.3,1.2,'sine',.6)));after(()=>pin('A.XIV',null,{quiet:true}))}],
+ [/^rotterdam$/,()=>{toast('“Deposited with the Chamber of Commerce at Rotterdam”. Document header, not an article, so no segment to show you.');eggSound(t=>{tone(98,t,1.3,'sawtooth',.8);tone(98.8,t,1.3,'sawtooth',.5);tone(82,t+1.5,1.8,'sawtooth',.8)})}],
+ [/^(10%|10 %|ten percent)$/,()=>{toast('Three tens: cancel and you “owe 10% of the agreed price” (A.VI.8); pay late and the claim is “increased by 10% to cover administration costs” (A.IX.3 and B.III.4).',8000);['A.VI','A.IX','B.III'].forEach((id,i)=>setTimeout(()=>flashW(id,'var(--c-comm)'),i*300));eggSound(t=>[0,.3,.6].forEach(d=>{tone(1318.5,t+d,.1,'square',.5);tone(1760,t+d+.08,.3,'square',.5)}))}],
+ [/^(suspend|suspension|6 months|six months)$/,()=>suspendEgg(),true],
+ [/^(dissolve|dissolution)$/,()=>{toast('Pon Power may “dissolve the agreement in full or in part, without being obliged to pay any compensation”. Back shortly.');if(!reduce){rot.classList.add('gone');setTimeout(()=>rot.classList.remove('gone'),2600)}eggSound(t=>tone(880,t,2.2,'sine',.6,110));setTimeout(()=>pin('A.XIII',null,{quiet:true}),reduce?0:3000)},true],
+ [/^gross negligence$/,()=>{toast('“With the exception of gross negligence on the part of Pon Power”. The one stated exception, in A.XI.2 and again in B.V.6.');shake();['A.XI','B.V'].forEach((id,i)=>[0,400,800].forEach(d=>setTimeout(()=>flashW(id,'var(--c-liab)'),d+i*120)));eggSound(t=>{tone(220,t,.5,'sawtooth',.7);tone(233,t,.5,'sawtooth',.7)})}],
+ [/^(guarantee|warranty|12 months|twelve months)$/,()=>{toast('“for a period of 12 months subsequent to delivery” (A.X.2). Twelve ticks, counted from deemed delivery in A.VI.3.');const i0=N.findIndex(n=>n.id==='A.X');for(let k=0;k<12;k++)setTimeout(()=>flashW(N[(i0+k)%N.length].id,'var(--t-time)'),k*160);eggSound(t=>{for(let k=0;k<12;k++)tone(k%2?1000:1250,t+k*.16,.05,'square',.5);tone(1568,t+12*.16,.8,'triangle',.8)});setTimeout(()=>pin('A.X',null,{quiet:true}),2300)}],
+ [/^(fine print|small print)$/,()=>{toast('Now reading the fine print.');if(!reduce){document.body.classList.add('tiny');setTimeout(()=>document.body.classList.remove('tiny'),3500)}eggSound(t=>tone(1400,t,.5,'sine',.5,2800))},true],
+ [/^(bulldozer|dozer|excavator|digger)$/,()=>dozerEgg(),true],
+ [/^42$/,()=>toast(`${pairs.length===42?'42 connected pairs in this wheel. The answer was in the terms and conditions all along.':'The answer. Not the number of connected pairs, though: that is '+pairs.length+'.'}`)],
+ [/^(adi|analog devices)$/,()=>toast('Wrong wheel. This one is yellow.')],
+ [/^(disco|party)$/,()=>discoEgg(),true],
+ [/^(eggs|easter eggs|help)$/,()=>toast('<b>Easter eggs</b><ul>'+EGGLIST.map(x=>`<li>${x}</li>`).join('')+'</ul>',16000)],
+];
+const EGGLIST=['<code>force majeure</code> the wheel judders','<code>cash</code> B.III says both','<code>fatal</code> payment terms','⏎ <code>diesel</code> / <code>engine</code> / <code>generator</code> flywheel start','<code>dordrecht</code> court bells','<code>rotterdam</code> harbour horn','<code>10%</code> the three tens','⏎ <code>suspend</code> a maximum of 6 months (demo: 6 seconds)','⏎ <code>dissolve</code> the wheel dissolves','<code>gross negligence</code> the one exception','<code>guarantee</code> a 12-month clock','⏎ <code>fine print</code> the panel shrinks','⏎ <code>bulldozer</code> a lap of the ring','<code>42</code>','<code>adi</code>','⏎ <code>disco</code> or the Konami code','Keys <b>A</b> to <b>X</b>: clause piano, one key per article','Triple-click the centre of the wheel: a run round all 24 articles','Pin A.VI: confetti (once)','Leave it for 60 seconds: slow rotation','<code>eggs</code> shows this list'];
+$('#egglist').innerHTML=EGGLIST.map(x=>`<li>${x}</li>`).join('');
+let frozen=false;
+function suspendEgg(){if(frozen)return;frozen=true;const w=$('.wheel');w.classList.add('frozen');let n=6;toast('Suspended “for a maximum of 6 months”. Demo version: 6 seconds.',6500);Sound.stop();
+  const tk=()=>{hubBig.textContent=n;hubSm.textContent='suspended';eggSound(t=>tone(n?440:880,t,n?.08:.6,'square',.4));if(n--<=0){w.classList.remove('frozen');frozen=false;pin('A.XIII',null,{quiet:true});return}setTimeout(tk,1000)};tk()}
+let dozing=false;
+function dozerEgg(){if(dozing)return;if(reduce){toast('A bulldozer would do a lap here, but reduced motion is on.');return}dozing=true;toast('Site access road confirmed suitable for the requisite transport (A.VII.2.c).');
+  const g=el('g',{class:'dozer'},svg);
+  el('rect',{x:-26,y:-10,width:52,height:12,rx:6,fill:'#222'},g);[-18,-6,6,18].forEach(x=>el('circle',{cx:x,cy:-4,r:3.4,fill:'#777'},g));
+  el('rect',{x:-20,y:-26,width:36,height:16,rx:2,fill:'#ffcd11',stroke:'#111','stroke-width':1.5},g);el('rect',{x:-16,y:-44,width:18,height:18,rx:2,fill:'#ffcd11',stroke:'#111','stroke-width':1.5},g);el('rect',{x:-12,y:-40,width:10,height:9,fill:'#cfe6f5',stroke:'#111','stroke-width':1},g);
+  el('rect',{x:10,y:-36,width:3,height:10,fill:'#111'},g);el('path',{d:'M16 -18L30 -14M30 -30Q38 -14 30 2',fill:'none',stroke:'#111','stroke-width':3.5,'stroke-linecap':'round'},g);
+  eggSound(t=>{tone(48,t,7,'sawtooth',.7,56);tone(96,t,7,'square',.15,112)});
+  const t0=performance.now(),D=7000;let last=-1;
+  (function fr(t){const k=(t-t0)/D;if(k>=1){g.remove();dozing=false;return}const a=k*360,[x,y]=pt(498,a);g.setAttribute('transform',`translate(${f(x)} ${f(y)}) rotate(${f(a+90)}) scale(.95)`);
+    const n=N.find(n=>a>=n.a0&&a<n.a1);if(n&&N.indexOf(n)!==last){last=N.indexOf(n);flashW(n.id,'var(--brand)')}requestAnimationFrame(fr)})(t0)}
+let disco=null;
+function discoEgg(){if(disco||reduce)return;toast('Clause disco. Eight seconds.');const cols=TYPES.map(t=>`var(--t-${t[0]})`).concat(CATS.map(c=>`var(--c-${c[0]})`),['var(--brand)']);let n=0;
+  if(FX.sound&&!Sound.touring())Sound.tune();
+  disco=setInterval(()=>{for(let i=0;i<5;i++)flashW(N[Math.floor(Math.random()*N.length)].id,cols[Math.floor(Math.random()*cols.length)]);if(++n>50){clearInterval(disco);disco=null}},160)}
+/* Konami code */
+const KON=['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];let kon=0;
+/* clause piano: keys A to X, one per article in wheel order */
+let pianoHint=false;
+document.addEventListener('keydown',ev=>{
+  if(/INPUT|TEXTAREA/.test(document.activeElement.tagName)||ev.metaKey||ev.ctrlKey||ev.altKey)return;
+  const key=ev.key.length===1?ev.key.toLowerCase():ev.key;
+  kon=key===KON[kon]?kon+1:(key===KON[0]?1:0);if(kon===KON.length){kon=0;discoEgg();return}
+  if(kon>8)return; /* let the closing B A of the code through without notes */
+  if(/^[a-x]$/.test(key)){const n=N[key.charCodeAt(0)-97];flashW(n.id,`var(--c-${n.cat})`);hubBig.textContent=n.id;hubSm.textContent=n.short;const ok=Sound.one(n.id);
+    if(!pianoHint){pianoHint=true;toast(ok?'Clause piano: keys A to X, one per article.':'Clause piano: keys A to X. Turn Sound on to hear it.',3500)}}
+});
+/* triple-click the hub: a run round every article */
+let hubClicks=0,hubT=null;
+svg.addEventListener('click',ev=>{const r=svg.getBoundingClientRect(),m=svg.getScreenCTM();if(!m)return;const x=(ev.clientX-m.e)/m.a,y=(ev.clientY-m.f)/m.d;if(Math.hypot(x-C,y-C)>90){hubClicks=0;return}
+  clearTimeout(hubT);hubT=setTimeout(()=>hubClicks=0,600);if(++hubClicks<3)return;hubClicks=0;
+  N.forEach((n,i)=>setTimeout(()=>{flashW(n.id,`var(--c-${n.cat})`);Sound.one(n.id)},i*70));toast('All 24 articles, in order.',2500)});
+function egg(q,entered){q=(q||'').trim().toLowerCase();if(FX.pres)return;const e=EGGS.find(x=>x[0].test(q));if(!e){FX.last=q;return}if(e[2]&&!entered)return;if(q===FX.last&&!entered)return;FX.last=q;e[1]()}
+/* spin */
+let spinning=false;
+function spin(noPin){if(spinning||FX.pres)return;wake();const n=N[Math.floor(Math.random()*N.length)];if(reduce){if(!noPin)pin(n.id);return}spinning=true;const turns=3+Math.floor(Math.random()*3);
+  rot.style.transition='transform 3.2s cubic-bezier(.12,.7,.1,1)';rot.style.transform=`rotate(${turns*360}deg)`;
+  if(FX.sound){const c=ac();if(c)for(let i=0;i<26;i++){const u=i/25;tone(700+Math.random()*120,c.currentTime+3.1*(1-Math.pow(1-u,2.6)),.04,'square',.35)}}
+  setTimeout(()=>{rot.style.transition='none';rot.style.transform='';spinning=false;if(!noPin)pin(n.id)},3300)}
+$('#spin').addEventListener('click',()=>spin());
+/* idle rotation after 60 s */
+let idleT=null;
+function wake(){if(rot.classList.contains('idle')){const m=getComputedStyle(rot).transform.match(/matrix\(([^)]+)\)/);let a=0;if(m){const v=m[1].split(',').map(Number);a=(Math.atan2(v[1],v[0])*180/Math.PI+360)%360}rot.classList.remove('idle');rot.style.transition='none';rot.style.transform=`rotate(${a}deg)`;requestAnimationFrame(()=>requestAnimationFrame(()=>{rot.style.transition='transform .7s ease-out';rot.style.transform=`rotate(${a>180?360:0}deg)`;setTimeout(()=>{if(!spinning){rot.style.transition='none';rot.style.transform=''}},750)}))}
+  clearTimeout(idleT);if(!FX.pres&&!reduce)idleT=setTimeout(()=>{if(!spinning&&!Sound.touring()&&!S.pin&&S.doc==null)rot.classList.add('idle')},60000)}
+['pointermove','pointerdown','keydown','wheel','touchstart'].forEach(e=>window.addEventListener(e,wake,{passive:true}));
+/* controls */
+$('#snd').addEventListener('click',()=>{setSound(!FX.sound);if(FX.sound){ac();if(S.pin)Sound.clause(S.pin);else Sound.hello()}});
+$('#mode').addEventListener('click',ev=>{const b=ev.target.closest('button');if(!b)return;FX.mode=b.dataset.m;document.querySelectorAll('#mode button').forEach(x=>x.setAttribute('aria-pressed',x===b));if(FX.pres)return;if(!FX.sound)setSound(true);ac();if(S.pin)Sound.clause(S.pin)});
+
+legend();lower();render();refresh();fitView();fitTitles();wake();
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitTitles);
+</script>
+</body>
+</html>
